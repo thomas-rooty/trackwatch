@@ -12,6 +12,7 @@ const Login = () => {
     e.preventDefault()
     try {
       await signIn(email, password)
+      console.log('User logged in!')
     } catch (error: any) {
       alert(error.message)
     }

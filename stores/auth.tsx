@@ -56,6 +56,9 @@ export const useAuthStore = create<AuthStore>()(
         }
 
         set({user: data?.user})
+
+        // Redirect to account page
+        window.location.href = '/account'
       },
       signIn: async (email, password) => {
         const {data, error} = await supabase.auth.signInWithPassword({
@@ -66,6 +69,9 @@ export const useAuthStore = create<AuthStore>()(
         if (error) throw new Error(error.message)
 
         set({user: data.user})
+
+        // Redirect to account page
+        window.location.href = '/account'
       },
       signOut: async () => {
 
