@@ -27,6 +27,13 @@ const Account = () => {
         if (error) throw new Error(error.message)
 
         setUser(data)
+
+        // Check if we have a session
+        const {
+          data: { session },
+        } = await supabase.auth.getSession()
+
+        console.log(session)
       } catch (error: any) {
         console.error(error.message)
 
