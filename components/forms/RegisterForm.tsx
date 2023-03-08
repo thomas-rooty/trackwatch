@@ -1,7 +1,9 @@
 "use client"
-import styles from './signup.module.css'
+import styles from './Forms.module.css'
 import {useState} from 'react'
 import {useAuthStore} from "@/stores/auth";
+import Image from 'next/legacy/image';
+import BrandLogo from '@/public/img/brand_logo.png';
 
 const RegisterForm = () => {
   const [email, setEmail] = useState('')
@@ -19,26 +21,35 @@ const RegisterForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email:
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
+        <Image src={BrandLogo} className={styles.logo} alt='logo' />
+        <p>Binge smarter, not harder.</p>
+      </div>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
-          type="email"
+          type='email'
+          className={styles.input}
+          placeholder={'Email address'}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
-      </label>
-      <label>
-        Password:
         <input
-          type="password"
+          type='password'
+          className={styles.input}
+          placeholder={'Password'}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
-      </label>
-      <button type="submit">Sign Up</button>
-      <p>Already have an account? <a href="/login">Sign in</a></p>
-    </form>
+        <button className={styles.submitBtn} type='submit'>Sign In</button>
+        <div className={styles.formFooter}>
+          <p>Already have an account?</p>
+          <a href='/login'>Sign in</a>
+        </div>
+      </form>
+    </div>
   )
 }
 
