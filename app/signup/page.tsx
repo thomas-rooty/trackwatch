@@ -6,7 +6,7 @@ const RegisterPage = () => {
   return (
     <div className={styles.container}>
       <Image
-        src='/img/background.jpg'
+        src='/img/background2.jpg'
         className={styles.backgroundImg}
         alt='background'
         layout='fill'

@@ -93,4 +93,9 @@
   color: #ffac16;
   font-weight: 600;
   font-size: 1.1rem;
+  transition: all .3s ease;
+}
+
+.formFooter a:hover {
+  transform: scale(1.05);
 }
