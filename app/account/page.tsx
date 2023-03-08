@@ -7,33 +7,26 @@ import {supabase} from "@/utils/supabase";
 interface User {
   id: string
   email: string
-  password: string
 }
 
 const Account = () => {
   const [user, setUser] = useState<User | null>(null)
   const router = useRouter()
   const {user: currentUser} = useAuthStore()
+  const signOut = useAuthStore((state) => state.signOut)
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const {data, error} = await supabase
           .from('users')
-          .select('id, email, password')
+          .select('id, email')
           .eq('email', currentUser?.email)
           .single()
 
         if (error) throw new Error(error.message)
 
         setUser(data)
-
-        // Check if we have a session
-        const {
-          data: { session },
-        } = await supabase.auth.getSession()
-
-        console.log(session)
       } catch (error: any) {
         console.error(error.message)
 
@@ -50,10 +43,10 @@ const Account = () => {
   return (
     <div>
       <h1>Account</h1>
+      <button onClick={() => signOut()}>Sign out</button>
       {user && (
         <div>
           <p>Email: {user.email}</p>
-          <p>Password: {user.password}</p>
         </div>
       )}
     </div>

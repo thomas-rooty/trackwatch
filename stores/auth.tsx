@@ -59,6 +59,11 @@ export const useAuthStore = create<AuthStore>()(
         await supabase.auth.signOut()
 
         set({user: null})
+
+        localStorage.removeItem('auth-store') // Remove user from local storage
+
+        // Redirect to home page
+        window.location.href = '/'
       },
       isLoaded: false,
     }),
