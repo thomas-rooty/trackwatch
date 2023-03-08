@@ -1,20 +1,17 @@
 "use client"
 import styles from './login.module.css'
 import {useState} from 'react'
-import {useRouter} from "next/navigation";
 import {useAuthStore} from "@/stores/auth";
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const {signIn} = useAuthStore()
-  const router = useRouter()
+  const signIn = useAuthStore((state) => state.signIn)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       await signIn(email, password)
-      router.push('/account')
     } catch (error: any) {
       alert(error.message)
     }

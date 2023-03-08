@@ -1,6 +1,7 @@
 import {create} from 'zustand'
 import {persist} from 'zustand/middleware'
 import {supabase} from "@/utils/supabase";
+import {Session} from "@supabase/gotrue-js";
 
 type User = {
   id: string
@@ -11,6 +12,7 @@ type User = {
 interface AuthStore {
   user: User | null
   setUser: (user: User | null) => void
+  getSession: () => Promise<{ session: Session; } | { session: null; } | undefined>
   signUp: (email: string, password: string) => Promise<void>
   signIn: (email: string, password: string) => Promise<void>
   signOut: () => Promise<void>
@@ -23,6 +25,16 @@ export const useAuthStore = create<AuthStore>()(
       setUser: (user) => {
         set(() => ({user}))
         localStorage.setItem('user', JSON.stringify(user)) // Save user to local storage
+      },
+      getSession: async () => {
+        try {
+          const {data, error} = await supabase.auth.getSession()
+          console.log(data)
+          return data
+        } catch (error: any) {
+          console.log('Error fetching session:', error.message)
+          set({user: null})
+        }
       },
       signUp: async (email, password) => {
         const {data, error} = await supabase.auth.signUp({
@@ -53,14 +65,15 @@ export const useAuthStore = create<AuthStore>()(
 
         if (error) throw new Error(error.message)
 
-        set({user: data?.user})
+        set({user: data.user})
       },
       signOut: async () => {
-        await supabase.auth.signOut()
 
         set({user: null})
 
         localStorage.removeItem('auth-store') // Remove user from local storage
+
+        await supabase.auth.signOut()
 
         // Redirect to home page
         window.location.href = '/'
@@ -69,7 +82,6 @@ export const useAuthStore = create<AuthStore>()(
     }),
     {
       name: 'auth-store', // Name the store (optional)
-      getStorage: () => localStorage, // Set the storage mechanism (optional)
     }
   )
 );
@@ -77,6 +89,7 @@ export const useAuthStore = create<AuthStore>()(
 export const initAuthStore = (): AuthStore => ({
   user: JSON.parse(localStorage.getItem('user') || 'null'),
   setUser: () => null,
+  getSession: async () => void 0,
   signUp: async () => void 0,
   signIn: async () => void 0,
   signOut: async () => void 0,
