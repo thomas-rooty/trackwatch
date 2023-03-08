@@ -3,6 +3,8 @@ import {useEffect, useState} from 'react'
 import {useRouter} from "next/navigation";
 import {useAuthStore} from "@/stores/auth";
 import {supabase} from "@/utils/supabase";
+import styles from './account.module.css'
+import Sidebar from '@/components/sidebar/Sidebar';
 
 interface User {
   id: string
@@ -41,8 +43,8 @@ const Account = () => {
   }, [currentUser, router])
 
   return (
-    <div>
-      <h1>Account</h1>
+    <div className={styles.container}>
+      <Sidebar />
       <button onClick={() => signOut()}>Sign out</button>
       {user && (
         <div>

@@ -64,7 +64,7 @@ export const useAuthStore = create<AuthStore>()(
         await supabase.auth.signOut()
 
         // Redirect to home page
-        window.location.href = '/'
+        window.location.href = '/login'
       },
       isLoaded: false,
     }),
