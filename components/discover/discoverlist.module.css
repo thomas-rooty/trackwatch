@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.sectionTitleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem;
+}
+
+.showAll {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.1rem;
+  color: #FFC857;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all ease-in .2s;
+}
+
+.showAll:hover {
+  color: #ffa200;
+  text-decoration: underline;
+}
+
+.sectionTitle {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 2rem;
+  padding: 0;
+}
+
+.movieList {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+}

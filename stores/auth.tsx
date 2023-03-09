@@ -73,12 +73,3 @@ export const useAuthStore = create<AuthStore>()(
     }
   )
 );
-
-export const initAuthStore = (): AuthStore => ({
-  user: JSON.parse(localStorage.getItem('user') || 'null'),
-  setUser: () => null,
-  signUp: async () => void 0,
-  signIn: async () => void 0,
-  signOut: async () => void 0,
-  isLoaded: true // Set isLoaded to true once the user's authentication status has been loaded from storage
-})

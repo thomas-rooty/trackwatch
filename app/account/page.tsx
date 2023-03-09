@@ -15,7 +15,6 @@ const Account = () => {
   const [user, setUser] = useState<User | null>(null)
   const router = useRouter()
   const {user: currentUser} = useAuthStore()
-  const signOut = useAuthStore((state) => state.signOut)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,8 +43,7 @@ const Account = () => {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
-      <button onClick={() => signOut()}>Sign out</button>
+      <Sidebar/>
       {user && (
         <div>
           <p>Email: {user.email}</p>

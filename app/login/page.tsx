@@ -12,7 +12,7 @@ const LoginPage = () => {
         layout='fill'
         objectFit='cover'
       />
-      <LoginForm />
+      <LoginForm/>
     </div>
   );
 };
