@@ -14,8 +14,8 @@ const MovieDetails = () => {
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   // Get store values
-  const show = useShowStore(state => state.show)
   const setShow = useShowStore(state => state.setShow)
+  const setSelectedSeason = useShowStore(state => state.setSelectedSeason)
   const isLoaded = useShowStore(state => state.isLoaded)
   const setIsLoaded = useShowStore(state => state.setIsLoaded)
 
@@ -28,15 +28,17 @@ const MovieDetails = () => {
         console.log(data)
         setIsLoaded(true)
       })
+    // Set default season to 1, otherwise it will get the previous selected season from another show
+    setSelectedSeason(1)
   }, [TMDB_API_KEY, id, setIsLoaded, setShow])
 
   return (
     isLoaded &&
     <div className={styles.container}>
       <Sidebar/>
-      <ShowHeader show={show}/>
-      <ShowDesc show={show}/>
-      <ShowEpisodes show={show}/>
+      <ShowHeader/>
+      <ShowDesc/>
+      <ShowEpisodes/>
     </div>
   );
 };

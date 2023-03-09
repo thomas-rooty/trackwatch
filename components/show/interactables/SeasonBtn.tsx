@@ -1,9 +1,10 @@
 import styles from './seasonbtn.module.css';
-import { Show } from '@/types/show.interface';
 import { useShowStore } from '@/stores/show';
 
 // Button dropdown with the seasons
-const SeasonBtn = ({ show }: { show: Show }) => {
+const SeasonBtn = () => {
+  // Get show from store
+  const show = useShowStore(state => state.show);
   const seasons = show.seasons;
 
   // Get and set season from store

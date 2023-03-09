@@ -1,7 +1,10 @@
 import styles from './show.module.css';
-import { Show } from '@/types/show.interface';
+import { useShowStore } from '@/stores/show';
 
-const ShowDesc = ({ show }: { show: Show }) => {
+const ShowDesc = () => {
+  // Get show from store
+  const show = useShowStore(state => state.show);
+
   // Store useful data and threat them in variables to improve readability at the return
   const network = show.networks[0].name
   const status = show.status

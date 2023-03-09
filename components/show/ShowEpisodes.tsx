@@ -1,11 +1,14 @@
 import styles from './show.module.css';
-import { Show } from '@/types/show.interface';
 import Image from 'next/legacy/image';
 import Episodes from '@/public/icons/episodes.svg';
 import SeasonBtn from '@/components/show/interactables/SeasonBtn';
 import EpisodesTable from '@/components/show/interactables/EpisodesTable';
+import { useShowStore } from '@/stores/show';
 
-const ShowEpisodes = ({ show }: { show: Show }) => {
+const ShowEpisodes = () => {
+  // Get show from store
+  const show = useShowStore(state => state.show);
+
   return (
     <div className={styles.showContent}>
       <div className={styles.left}>
@@ -25,8 +28,8 @@ const ShowEpisodes = ({ show }: { show: Show }) => {
       </div>
       <div className={styles.right}>
         <div className={styles.sectionSeasons}>
-          <SeasonBtn show={show} />
-          <EpisodesTable show={show} />
+          <SeasonBtn/>
+          <EpisodesTable/>
         </div>
       </div>
     </div>

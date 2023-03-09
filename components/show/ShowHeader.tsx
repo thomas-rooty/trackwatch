@@ -1,7 +1,10 @@
 import styles from './show.module.css';
-import {Show} from "@/types/show.interface";
+import { useShowStore } from '@/stores/show';
 
-const ShowHeader = ({show}: { show: Show }) => {
+const ShowHeader = () => {
+  // Get show from store
+  const show = useShowStore(state => state.show);
+
   // Convert release date to year
   const releaseYear = show.first_air_date.split('-')[0];
 

@@ -1,10 +1,9 @@
 import styles from './episodestable.module.css';
-import { Show } from '@/types/show.interface';
 import {useEffect} from 'react';
 import { useShowStore } from '@/stores/show';
 import { useSeasonStore } from '@/stores/season';
 
-const EpisodesTable = ({ show }: { show: Show }) => {
+const EpisodesTable = () => {
   // API key
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
@@ -14,6 +13,9 @@ const EpisodesTable = ({ show }: { show: Show }) => {
   // Get, set seasons
   const seasonDetails = useSeasonStore(state => state.seasonDetails)
   const setSeasonDetails = useSeasonStore(state => state.setSeasonDetails)
+
+  // Get show from store
+  const show = useShowStore(state => state.show);
 
   // Call api to get episodes
   useEffect(() => {
