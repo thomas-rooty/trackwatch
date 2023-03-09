@@ -12,7 +12,7 @@ const MovieCard = ({movie}: any) => {
   const handleMovieClick = () => {
     console.log('Redirect to :' + movie.id)
     console.log(movie)
-    //router.push(`/movie/${movie.id}`)
+    router.push(`/movie?id=${movie.id}`)
   }
 
   return (

@@ -1,4 +1,6 @@
 'use client';
+import styles from './movie.module.css';
+import Sidebar from "@/components/sidebar/Sidebar";
 import {useSearchParams} from 'next/navigation';
 import {useEffect} from "react";
 import {useMovieStore} from "@/stores/movie";
@@ -27,7 +29,8 @@ const MovieDetails = () => {
 
   return (
     isLoaded &&
-    <div>
+    <div className={styles.container}>
+      <Sidebar/>
       <h1>Movie Details</h1>
       <p>Movie ID: {movie.id}</p>
     </div>
