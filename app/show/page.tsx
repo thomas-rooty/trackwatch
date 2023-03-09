@@ -1,10 +1,10 @@
 'use client';
-import styles from './movie.module.css';
+import styles from './show.module.css';
 import Sidebar from "@/components/sidebar/Sidebar";
 import {useSearchParams} from 'next/navigation';
 import {useEffect} from "react";
 import {useMovieStore} from "@/stores/movie";
-import MovieHeader from "@/components/movie/MovieHeader";
+import MovieHeader from "@/components/show/MovieHeader";
 
 const MovieDetails = () => {
   const searchParams = useSearchParams();
@@ -19,7 +19,7 @@ const MovieDetails = () => {
 
   // fetch movie details
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
       .then(response => response.json())
       .then(data => {
         setMovie(data)

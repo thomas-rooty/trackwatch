@@ -2,9 +2,9 @@
 import styles from './category.module.css'
 import {useEffect} from "react";
 import {useDiscoverStore} from "@/stores/discover";
-import MovieCard from "@/components/moviecard/MovieCard";
+import MovieCard from "@/components/cards/MovieCard";
 
-const OnTheAir = () => {
+const NewSoon = () => {
   // Get NEXT_PUBLIC_TMDB_API_KEY from .env.local
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
@@ -18,7 +18,7 @@ const OnTheAir = () => {
 
   // Call the API to get the popular movies
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&air_date.gte=${today}&air_date.lte=${nextWeek}&sort_by=vote_count.desc&vote_count.gte=500&with_original_language=en`)
+    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&air_date.gte=${today}&air_date.lte=${nextWeek}&sort_by=vote_count.desc&with_original_language=en`)
       .then(response => response.json())
       .then(data => {
         // Limit to 8 movies
@@ -44,4 +44,4 @@ const OnTheAir = () => {
   )
 }
 
-export default OnTheAir
+export default NewSoon
