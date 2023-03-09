@@ -1,17 +1,19 @@
 'use client'
 import styles from './discover.module.css'
 import Sidebar from "@/components/sidebar/Sidebar";
-import Popular from "@/components/discover/Popular";
-import Recent from "@/components/discover/Recent";
-import Comedy from "@/components/discover/Comedy";
+import PopularMovies from "@/components/discover/PopularMovies";
+import PopularSeries from "@/components/discover/PopularSeries";
+import OnTheAir from "@/components/discover/OnTheAir";
+import ComedyMovies from "@/components/discover/ComedyMovies";
 
 const Discover = () => {
   return (
     <div className={styles.container}>
       <Sidebar/>
-      <Popular/>
-      <Recent/>
-      <Comedy/>
+      <PopularMovies/>
+      <PopularSeries/>
+      <OnTheAir/>
+      <ComedyMovies/>
     </div>
   )
 }

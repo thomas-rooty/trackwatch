@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {useDiscoverStore} from "@/stores/discover";
 import MovieCard from "@/components/moviecard/MovieCard";
 
-const Popular = () => {
+const PopularMovies = () => {
   // Get NEXT_PUBLIC_TMDB_API_KEY from .env.local
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
@@ -14,7 +14,7 @@ const Popular = () => {
 
   // Call the API to get the popular movies
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}&language=en-US&page=1&region=US&sort_by=vote_average.desc&vote_count.gte=500&with_original_language=en`)
       .then(response => response.json())
       .then(data => {
         // Limit to 8 movies
@@ -26,7 +26,7 @@ const Popular = () => {
   return (
     <div className={styles.container}>
       <div className={styles.sectionTitleContainer}>
-        <h1 className={styles.sectionTitle}>Popular shows</h1>
+        <h1 className={styles.sectionTitle}>Popular movies</h1>
         <span className={styles.showAll}>Show all</span>
       </div>
       <ul className={styles.movieList}>
@@ -40,4 +40,4 @@ const Popular = () => {
   )
 }
 
-export default Popular
+export default PopularMovies

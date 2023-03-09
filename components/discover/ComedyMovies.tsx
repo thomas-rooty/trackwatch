@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {useDiscoverStore} from "@/stores/discover";
 import MovieCard from "@/components/moviecard/MovieCard";
 
-const Comedy = () => {
+const ComedyMovies = () => {
   // Get NEXT_PUBLIC_TMDB_API_KEY from .env.local
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
@@ -13,7 +13,7 @@ const Comedy = () => {
   const comedy = useDiscoverStore(state => state.comedy)
 
   // Genres
-  // 35: Comedy
+  // 35: ComedyMovies
   // 10751: Family
   const genres = '35, 10751'
 
@@ -45,4 +45,4 @@ const Comedy = () => {
   )
 }
 
-export default Comedy
+export default ComedyMovies

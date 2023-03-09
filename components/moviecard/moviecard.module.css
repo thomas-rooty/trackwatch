@@ -1,3 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.addBtn {
+  /* Add button */
+  border-radius: 3px;
+  background-color: #6b6b6b;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.addBtnText {
+  /* Add button text */
+  font-family: "Roboto", sans-serif;
+  font-size: .9rem;
+  color: #ffffff;
+  padding: 5px 7px;
+}
+
+.addBtn:hover {
+  background-color: #ffb721;
+}
+
 .movieCard {
   /* Movie card */
   position: relative;
