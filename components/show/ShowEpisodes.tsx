@@ -3,6 +3,7 @@ import { Show } from '@/types/show.interface';
 import Image from 'next/legacy/image';
 import Episodes from '@/public/icons/episodes.svg';
 import SeasonBtn from '@/components/show/interactables/SeasonBtn';
+import EpisodesTable from '@/components/show/interactables/EpisodesTable';
 
 const ShowEpisodes = ({ show }: { show: Show }) => {
   return (
@@ -25,6 +26,7 @@ const ShowEpisodes = ({ show }: { show: Show }) => {
       <div className={styles.right}>
         <div className={styles.sectionSeasons}>
           <SeasonBtn show={show} />
+          <EpisodesTable show={show} />
         </div>
       </div>
     </div>

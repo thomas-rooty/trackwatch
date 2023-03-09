@@ -67,16 +67,19 @@
   color: #333333;
 }
 
-/* show Content Component */
+/* ShowEpisode Component */
 .showContent {
   display: flex;
   flex-direction: row;
-  width: 60%;
-  justify-content: space-between;
+  min-width: 100%;
   background-color: #ffffff;
   font-family: "Aceh Light", sans-serif;
   color: #333333;
   padding: 1rem;
+}
+
+.left {
+  width: 350px;
 }
 
 .sectionTitle {
@@ -96,4 +99,15 @@
 
 .posterImg {
   border-radius: 7px;
+}
+
+/* Right section */
+.right {
+  flex-grow: 1;
+}
+
+.sectionSeasons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }

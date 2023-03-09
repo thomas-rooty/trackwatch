@@ -1,8 +1,9 @@
 .seasonBtn {
   border: none;
   background: #ccc;
-  color: #fff;
+  color: #000;
   padding: 0.5rem 0.3rem;
+  width: fit-content;
   border-radius: 3px;
   font-size: 1rem;
   font-family: "Aceh Light", sans-serif;
@@ -11,6 +12,5 @@
 }
 
 .seasonBtn:hover {
-  background: #fff;
-  color: #000;
+  background: #b6b6b6;
 }

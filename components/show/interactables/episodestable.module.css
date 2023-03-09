@@ -1,0 +1,60 @@
+.episodesTable {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+  margin: 5px 0 0;
+  padding: 0;
+}
+
+.table {
+  border-spacing: 0;
+}
+
+.episodeHeaderRow > :first-child {
+  width: 100px;
+}
+
+
+.episodeRow {
+  height: 40px;
+  cursor: pointer;
+}
+
+.episodeRow td {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.episodeRow:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.episodeRow:nth-child(1) td:nth-child(1) {
+  border-top-left-radius: 10px;
+}
+
+.episodeRow:nth-last-child(1) td:nth-child(1) {
+  border-bottom-left-radius: 10px;
+}
+
+.episodeRow td:nth-child(2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.episodeRow td:nth-child(3) {
+  width: 120px;
+  font-weight: normal;
+  font-style: italic;
+  opacity: .4;
+  text-align: center;
+}
+
+.episodeRow td:nth-child(4) {
+  width: 50px;
+  font-style: italic;
+  text-align: center;
+}
