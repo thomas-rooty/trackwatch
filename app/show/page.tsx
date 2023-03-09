@@ -6,7 +6,7 @@ import {useEffect} from "react";
 import {useShowStore} from "@/stores/show";
 import ShowHeader from "@/components/show/ShowHeader";
 import ShowDesc from '@/components/show/ShowDesc';
-import ShowContent from '@/components/show/ShowContent';
+import ShowEpisodes from '@/components/show/ShowEpisodes';
 
 const MovieDetails = () => {
   const searchParams = useSearchParams();
@@ -36,7 +36,7 @@ const MovieDetails = () => {
       <Sidebar/>
       <ShowHeader show={show}/>
       <ShowDesc show={show}/>
-      <ShowContent show={show}/>
+      <ShowEpisodes show={show}/>
     </div>
   );
 };
