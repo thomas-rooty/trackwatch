@@ -5,6 +5,7 @@ import {useSearchParams} from 'next/navigation';
 import {useEffect} from "react";
 import {useMovieStore} from "@/stores/movie";
 import MovieHeader from "@/components/show/MovieHeader";
+import MovieDesc from '@/components/show/MovieDesc';
 
 const MovieDetails = () => {
   const searchParams = useSearchParams();
@@ -33,7 +34,7 @@ const MovieDetails = () => {
     <div className={styles.container}>
       <Sidebar/>
       <MovieHeader movie={movie}/>
-      <p>Movie ID: {movie.id}</p>
+      <MovieDesc movie={movie}/>
     </div>
   );
 };
