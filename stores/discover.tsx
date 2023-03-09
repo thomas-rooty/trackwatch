@@ -1,11 +1,19 @@
 import {create} from 'zustand'
 
 interface DiscoverStore {
-  movies: any
-  setMovies: (movies: any) => void
+  popular: any
+  setPopular: (movies: any) => void
+  recent: any
+  setRecent: (movies: any) => void
+  comedy: any
+  setComedy: (movies: any) => void
 }
 
 export const useDiscoverStore = create<DiscoverStore>((set) => ({
-  movies: [],
-  setMovies: (movies) => set(() => ({movies})),
+  popular: [],
+  setPopular: (movies) => set({popular: movies}),
+  recent: [],
+  setRecent: (movies) => set({recent: movies}),
+  comedy: [],
+  setComedy: (movies) => set({comedy: movies}),
 }))
