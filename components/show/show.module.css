@@ -1,4 +1,4 @@
-/* Movie Header Component */
+/* show Header Component */
 .container {
   position: relative;
   display: flex;
@@ -10,7 +10,7 @@
   background-color: #171717;
 }
 
-.movieTitle {
+.showTitle {
   font-family: "Aceh Light", sans-serif;
   font-size: 2.5rem;
   text-shadow: 0 0 0.5rem #000;
@@ -44,8 +44,8 @@
   right: 1rem;
 }
 
-/* Movie Description Component */
-.movieDesc {
+/* show Description Component */
+.showDesc {
   background-color: #eeeeee;
   font-family: "Aceh Light", sans-serif;
   color: black;
@@ -53,16 +53,24 @@
   border-bottom: 1px solid #cccccc;
 }
 
-.movieDescTitle {
+.showDescTitle {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.movieDescText {
+.showDescText {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   width: 60%;
   text-align: justify;
   color: #333333;
+}
+
+/* show Content Component */
+.showContent {
+  background-color: #ffffff;
+  font-family: "Aceh Light", sans-serif;
+  color: black;
+  padding: 1rem;
 }

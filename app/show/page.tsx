@@ -3,9 +3,10 @@ import styles from './show.module.css';
 import Sidebar from "@/components/sidebar/Sidebar";
 import {useSearchParams} from 'next/navigation';
 import {useEffect} from "react";
-import {useMovieStore} from "@/stores/movie";
-import MovieHeader from "@/components/show/MovieHeader";
-import MovieDesc from '@/components/show/MovieDesc';
+import {useMovieStore} from "@/stores/show";
+import ShowHeader from "@/components/show/ShowHeader";
+import ShowDesc from '@/components/show/ShowDesc';
+import ShowContent from '@/components/show/ShowContent';
 
 const MovieDetails = () => {
   const searchParams = useSearchParams();
@@ -13,8 +14,8 @@ const MovieDetails = () => {
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   // Get store values
-  const movie = useMovieStore(state => state.movie)
-  const setMovie = useMovieStore(state => state.setMovie)
+  const show = useMovieStore(state => state.show)
+  const setShow = useMovieStore(state => state.setShow)
   const isLoaded = useMovieStore(state => state.isLoaded)
   const setIsLoaded = useMovieStore(state => state.setIsLoaded)
 
@@ -23,18 +24,19 @@ const MovieDetails = () => {
     fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
       .then(response => response.json())
       .then(data => {
-        setMovie(data)
+        setShow(data)
         console.log(data)
         setIsLoaded(true)
       })
-  }, [TMDB_API_KEY, id, setIsLoaded, setMovie])
+  }, [TMDB_API_KEY, id, setIsLoaded, setShow])
 
   return (
     isLoaded &&
     <div className={styles.container}>
       <Sidebar/>
-      <MovieHeader movie={movie}/>
-      <MovieDesc movie={movie}/>
+      <ShowHeader show={show}/>
+      <ShowDesc show={show}/>
+      <ShowContent show={show}/>
     </div>
   );
 };
