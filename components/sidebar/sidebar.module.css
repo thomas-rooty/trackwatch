@@ -67,6 +67,11 @@
   color: #FFC857;
 }
 
+.activeSidebarListItem {
+  color: #fff;
+  background: #2d2d2d;
+  border-radius: 10px;
+}
 
 .sidebarListItem:hover {
   color: #fff;

@@ -47,14 +47,14 @@ const Sidebar = () => {
         <div className={styles.sidebarItemSection}>
           <ul className={styles.sidebarList}>
             <Link href='/account'>
-              <li className={`${styles.sidebarListItem} ${isActive('/account') ? styles.active : ''}`}>
+              <li className={`${styles.sidebarListItem} ${isActive('/account') ? styles.active : ''} ${isActive('/account') ? styles.activeSidebarListItem : ''}`}>
                 <Image src={getIcon(Profile, ProfileActive, isActive('/account'))} className={styles.svgIcon} width={24}
                        height={24} alt='list icon'/>
                 <span className={styles.link}>Profile</span>
               </li>
             </Link>
             <Link href='/calendar'>
-              <li className={`${styles.sidebarListItem} ${isActive('/calendar') ? styles.active : ''}`}>
+              <li className={`${styles.sidebarListItem} ${isActive('/calendar') ? styles.active : ''} ${isActive('/calendar') ? styles.activeSidebarListItem : ''}`}>
                 <Image src={getIcon(Calendar, CalendarActive, isActive('/calendar'))} className={styles.svgIcon}
                        width={24}
                        height={24} alt='list icon'/>
@@ -62,7 +62,7 @@ const Sidebar = () => {
               </li>
             </Link>
             <Link href='/upcoming'>
-              <li className={`${styles.sidebarListItem} ${isActive('/upcoming') ? styles.active : ''}`}>
+              <li className={`${styles.sidebarListItem} ${isActive('/upcoming') ? styles.active : ''} ${isActive('/upcoming') ? styles.activeSidebarListItem : ''}`}>
                 <Image src={getIcon(Upcoming, UpcomingActive, isActive('/upcoming'))} className={styles.svgIcon}
                        width={24}
                        height={24} alt='list icon'/>
@@ -70,14 +70,14 @@ const Sidebar = () => {
               </li>
             </Link>
             <Link href='/watchlist'>
-              <li className={`${styles.sidebarListItem} ${isActive('/watchlist') ? styles.active : ''}`}>
+              <li className={`${styles.sidebarListItem} ${isActive('/watchlist') ? styles.active : ''} ${isActive('/watchlist') ? styles.activeSidebarListItem : ''}`}>
                 <Image src={getIcon(List, ListActive, isActive('/watchlist'))} className={styles.svgIcon} width={24}
                        height={24} alt='list icon'/>
                 <span className={styles.link}>Watchlist</span>
               </li>
             </Link>
             <Link href='/discover'>
-              <li className={`${styles.sidebarListItem} ${isActive('/discover') ? styles.active : ''}`}>
+              <li className={`${styles.sidebarListItem} ${isActive('/discover') ? styles.active : ''} ${isActive('/discover') ? styles.activeSidebarListItem : ''}`}>
                 <Image src={getIcon(Search, SearchActive, isActive('/discover'))} className={styles.svgIcon} width={24}
                        height={24} alt='list icon'/>
                 <span className={styles.link}>Discover</span>
@@ -88,14 +88,14 @@ const Sidebar = () => {
         <div className={styles.sidebarItemSection}>
           <p className={styles.sidebarItemSectionTitle}>Support</p>
           <ul className={styles.sidebarList}>
-            <li className={`${styles.sidebarListItem} ${isActive('/settings') ? styles.active : ''}`}>
+            <li className={`${styles.sidebarListItem} ${isActive('/settings') ? styles.active : ''} ${isActive('/settings') ? styles.activeSidebarListItem : ''}`}>
               <Image src={getIcon(Settings, SettingsActive, isActive('/settings'))} className={styles.svgIcon} width={24}
                      height={24} alt='list icon'/>
               <Link href='/settings'>
                 <span className={styles.link}>Settings</span>
               </Link>
             </li>
-            <li className={`${styles.sidebarListItem} ${isActive('/help') ? styles.active : ''}`}>
+            <li className={`${styles.sidebarListItem} ${isActive('/help') ? styles.active : ''} ${isActive('/help') ? styles.activeSidebarListItem : ''}`}>
               <Image src={getIcon(Help, HelpActive, isActive('/help'))} className={styles.svgIcon}
                      width={24}
                      height={24} alt='list icon'/>
@@ -103,7 +103,7 @@ const Sidebar = () => {
                 <span className={styles.link}>Get help</span>
               </Link>
             </li>
-            <li className={`${styles.sidebarListItem} ${isActive('/feedback') ? styles.active : ''}`}>
+            <li className={`${styles.sidebarListItem} ${isActive('/feedback') ? styles.active : ''} ${isActive('/feedback') ? styles.activeSidebarListItem : ''}`}>
               <Image src={getIcon(Feedback, FeedbackActive, isActive('/feedback'))} className={styles.svgIcon}
                      width={24}
                      height={24} alt='list icon'/>
