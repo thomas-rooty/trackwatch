@@ -8,7 +8,7 @@ interface ShowStore {
   setIsLoaded: (isLoaded: boolean) => void
 }
 
-export const useMovieStore = create<ShowStore>((set) => ({
+export const useShowStore = create<ShowStore>((set) => ({
   show: {} as Show,
   setShow: (show) => set({show}),
   isLoaded: false,

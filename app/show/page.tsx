@@ -3,7 +3,7 @@ import styles from './show.module.css';
 import Sidebar from "@/components/sidebar/Sidebar";
 import {useSearchParams} from 'next/navigation';
 import {useEffect} from "react";
-import {useMovieStore} from "@/stores/show";
+import {useShowStore} from "@/stores/show";
 import ShowHeader from "@/components/show/ShowHeader";
 import ShowDesc from '@/components/show/ShowDesc';
 import ShowContent from '@/components/show/ShowContent';
@@ -14,10 +14,10 @@ const MovieDetails = () => {
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   // Get store values
-  const show = useMovieStore(state => state.show)
-  const setShow = useMovieStore(state => state.setShow)
-  const isLoaded = useMovieStore(state => state.isLoaded)
-  const setIsLoaded = useMovieStore(state => state.setIsLoaded)
+  const show = useShowStore(state => state.show)
+  const setShow = useShowStore(state => state.setShow)
+  const isLoaded = useShowStore(state => state.isLoaded)
+  const setIsLoaded = useShowStore(state => state.setIsLoaded)
 
   // fetch movie details
   useEffect(() => {

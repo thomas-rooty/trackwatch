@@ -2,7 +2,7 @@
 import styles from './category.module.css'
 import {useEffect} from "react";
 import {useDiscoverStore} from "@/stores/discover";
-import MovieCard from "@/components/cards/MovieCard";
+import ShowCard from "@/components/cards/ShowCard";
 
 const PopularSeries = () => {
   // Get NEXT_PUBLIC_TMDB_API_KEY from .env.local
@@ -32,10 +32,10 @@ const PopularSeries = () => {
         <h1 className={styles.sectionTitle}>Recent popular series</h1>
         <span className={styles.showAll}>Show all</span>
       </div>
-      <ul className={styles.movieList}>
-        {popular.map((movie: any) => (
-          <li key={movie.id}>
-            <MovieCard movie={movie}/>
+      <ul className={styles.showList}>
+        {popular.map((show: any) => (
+          <li key={show.id}>
+            <ShowCard show={show}/>
           </li>
         ))}
       </ul>

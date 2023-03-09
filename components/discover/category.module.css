@@ -33,7 +33,7 @@
   padding: 0;
 }
 
-.movieList {
+.showList {
   display: flex;
   flex-direction: row;
   list-style: none;

@@ -4,7 +4,7 @@ import { Show } from '@/types/show.interface';
 const ShowContent = ({ show }: { show: Show }) => {
   return (
     <div className={styles.showContent}>
-      <h1>Movie Details</h1>
+      <h1>Show Details</h1>
     </div>
   );
 };
