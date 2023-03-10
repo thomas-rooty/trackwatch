@@ -44,8 +44,9 @@ const Account = () => {
         <div>
           <p>Email: {user.email}</p>
           <p>Name: {user.name}</p>
-          <p>Preferences: {user.preferences}</p>
-          <p>Saved Shows: {user.saved_shows}</p>
+          <p>Saved shows: {user.saved_shows?.map((show) => (
+            <p key={show}>{show}</p>
+          ))}</p>
         </div>
       )}
     </div>
