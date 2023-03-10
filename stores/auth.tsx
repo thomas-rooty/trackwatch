@@ -34,17 +34,19 @@ export const useAuthStore = create<AuthStore>()(
         try {
           const {data, error} = await supabase
             .from('users')
-            .insert({email, password})
+            .insert({email})
             .single()
 
           if (error) throw new Error(error.message)
         } catch (error: any) {
           alert(error.message)
-        }
-        set({user: data?.user})
+        } finally {
+          set({user: data.user})
 
-        // Redirect to account page
-        window.location.href = '/login'
+          // Login user and redirect to account page
+          await get().signIn(email, password)
+          window.location.href = '/account'
+        }
       },
       signIn: async (email, password) => {
         const {data, error} = await supabase.auth.signInWithPassword({
