@@ -1,3 +1,4 @@
+'use client';
 import styles from './login.module.css';
 import LoginForm from '@/components/forms/LoginForm';
 import Image from 'next/legacy/image';

@@ -1,3 +1,4 @@
+'use client';
 import styles from './signup.module.css';
 import RegisterForm from '@/components/forms/RegisterForm';
 import Image from 'next/legacy/image';

@@ -5,7 +5,6 @@ import {supabase} from "@/utils/supabase";
 type User = {
   id: string
   email?: string
-  password?: string
 }
 
 interface AuthStore {
