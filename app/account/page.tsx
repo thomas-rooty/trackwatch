@@ -17,7 +17,7 @@ const Account = () => {
       try {
         const {data, error} = await supabase
           .from('users')
-          .select('id, email, name, preferences, saved_shows')
+          .select('*')
           .eq('email', currentUser?.email)
           .single()
 
