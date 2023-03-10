@@ -1,6 +1,6 @@
 'use client';
 import styles from './Forms.module.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthStore } from '@/stores/auth';
 import Image from 'next/legacy/image';
 import BrandLogo from '@/public/img/brand_logo.png';

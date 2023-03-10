@@ -1,8 +1,9 @@
 import styles from './seasonbtn.module.css';
-import { useShowStore } from '@/stores/show';
+import {useShowStore} from '@/stores/show';
 
 // Button dropdown with the seasons
 const SeasonBtn = () => {
+
   // Get show from store
   const show = useShowStore(state => state.show);
   const seasons = show.seasons;

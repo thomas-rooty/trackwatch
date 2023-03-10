@@ -9,7 +9,6 @@ const ShowCard = ({show}: { show: Show }) => {
   // Function that redirects to /discover/[id] when a show is clicked
   const handleShowClick = () => {
     console.log('Redirect to :' + show.id)
-    console.log(show)
     router.push(`/show?id=${show.id}`)
   }
 

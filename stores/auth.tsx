@@ -3,14 +3,15 @@ import {persist} from 'zustand/middleware'
 import {supabase} from "@/utils/supabase";
 
 type User = {
-  id: string
+  id?: string
+  name?: string
   email?: string
 }
 
 interface AuthStore {
   user: User | null
   setUser: (user: User | null) => void
-  signUp: (email: string, password: string) => Promise<void>
+  signUp: (name: string, email: string, password: string) => Promise<void>
   signIn: (email: string, password: string) => Promise<void>
   signOut: () => Promise<void>
   isLoaded: boolean
@@ -23,7 +24,7 @@ export const useAuthStore = create<AuthStore>()(
         set(() => ({user}))
         localStorage.setItem('user', JSON.stringify(user)) // Save user to local storage
       },
-      signUp: async (email, password) => {
+      signUp: async (name, email, password) => {
         const {data, error} = await supabase.auth.signUp({
           email,
           password,
@@ -32,32 +33,46 @@ export const useAuthStore = create<AuthStore>()(
         if (error) throw new Error(error.message)
 
         try {
+          // Store user in database given its input
           const {data, error} = await supabase
             .from('users')
-            .insert({email})
+            .insert({name, email})
             .single()
 
           if (error) throw new Error(error.message)
         } catch (error: any) {
           alert(error.message)
         } finally {
-          set({user: data.user})
-
           // Login user and redirect to account page
           await get().signIn(email, password)
           window.location.href = '/account'
         }
       },
       signIn: async (email, password) => {
-        const {data, error} = await supabase.auth.signInWithPassword({
+        const { data: user, error } = await supabase.auth.signInWithPassword({
           email,
           password,
-        })
-        if (error) throw new Error(error.message)
-        set({user: data.user})
+        });
 
-        // Redirect to account page
-        window.location.href = '/account'
+        if (error) {
+          throw new Error(error.message);
+        }
+
+        // Récupérer l'utilisateur en utilisant son email
+        const { data: users, error: usersError } = await supabase
+          .from('users')
+          .select('*')
+          .eq('email', email)
+          .single();
+
+        if (usersError) {
+          throw new Error(usersError.message);
+        }
+
+        set({ user: users });
+
+        // Rediriger vers la page de compte
+        window.location.href = '/account';
       },
       signOut: async () => {
         set({user: null})

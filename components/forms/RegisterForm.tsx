@@ -1,11 +1,12 @@
 "use client"
 import styles from './Forms.module.css'
-import {useState} from 'react'
+import React, {useState} from 'react'
 import {useAuthStore} from "@/stores/auth";
 import Image from 'next/legacy/image';
 import BrandLogo from '@/public/img/brand_logo.png';
 
 const RegisterForm = () => {
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {signUp} = useAuthStore()
@@ -13,7 +14,7 @@ const RegisterForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      await signUp(email, password)
+      await signUp(name, email, password)
       console.log('User created!')
     } catch (error: any) {
       alert(error.message)
@@ -27,6 +28,14 @@ const RegisterForm = () => {
         <p>Binge smarter, not harder.</p>
       </div>
       <form onSubmit={handleSubmit} className={styles.form}>
+        <input
+          type='text'
+          className={styles.input}
+          placeholder={'Name'}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <input
           type='email'
           className={styles.input}
