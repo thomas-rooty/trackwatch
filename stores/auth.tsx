@@ -1,12 +1,7 @@
 import {create} from 'zustand'
 import {persist} from 'zustand/middleware'
 import {supabase} from "@/utils/supabase";
-
-type User = {
-  id?: string
-  name?: string
-  email?: string
-}
+import type {User} from "@/types/user.interface";
 
 interface AuthStore {
   user: User | null

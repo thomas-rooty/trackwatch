@@ -5,11 +5,7 @@ import {useAuthStore} from "@/stores/auth";
 import {supabase} from "@/utils/supabase";
 import styles from './account.module.css'
 import Sidebar from '@/components/sidebar/Sidebar';
-
-interface User {
-  id: string
-  email: string
-}
+import type {User} from "@/types/user.interface";
 
 const Account = () => {
   const [user, setUser] = useState<User | null>(null)
@@ -21,7 +17,7 @@ const Account = () => {
       try {
         const {data, error} = await supabase
           .from('users')
-          .select('id, email')
+          .select('id, email, name, preferences, saved_shows')
           .eq('email', currentUser?.email)
           .single()
 
@@ -47,6 +43,9 @@ const Account = () => {
       {user && (
         <div>
           <p>Email: {user.email}</p>
+          <p>Name: {user.name}</p>
+          <p>Preferences: {user.preferences}</p>
+          <p>Saved Shows: {user.saved_shows}</p>
         </div>
       )}
     </div>
