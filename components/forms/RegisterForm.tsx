@@ -9,7 +9,7 @@ const RegisterForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const {signUp} = useAuthStore()
+  const signUp = useAuthStore((state) => state.signUp)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
