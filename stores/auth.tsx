@@ -1,7 +1,7 @@
-import {create} from 'zustand'
-import {persist} from 'zustand/middleware'
-import {supabase} from "@/utils/supabase";
-import type {User} from "@/types/user.interface";
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+import { supabase } from '@/utils/supabase'
+import type { User } from '@/types/user.interface'
 
 interface AuthStore {
   user: User | null
@@ -10,17 +10,19 @@ interface AuthStore {
   signIn: (email: string, password: string) => Promise<void>
   signOut: () => Promise<void>
   isLoaded: boolean
+  setIsLoaded: (isLoaded: boolean) => void
 }
 
 export const useAuthStore = create<AuthStore>()(
-  persist((set, get) => ({
+  persist(
+    (set, get) => ({
       user: null,
       setUser: (user) => {
-        set(() => ({user}))
+        set(() => ({ user }))
         localStorage.setItem('user', JSON.stringify(user)) // Save user to local storage
       },
       signUp: async (name, email, password) => {
-        const {data, error} = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
         })
@@ -29,10 +31,7 @@ export const useAuthStore = create<AuthStore>()(
 
         try {
           // Store user in database given its input
-          const {data, error} = await supabase
-            .from('users')
-            .insert({name, email})
-            .single()
+          const { data, error } = await supabase.from('users').insert({ name, email }).single()
 
           if (error) throw new Error(error.message)
         } catch (error: any) {
@@ -47,30 +46,26 @@ export const useAuthStore = create<AuthStore>()(
         const { data: user, error } = await supabase.auth.signInWithPassword({
           email,
           password,
-        });
+        })
 
         if (error) {
-          throw new Error(error.message);
+          throw new Error(error.message)
         }
 
         // Récupérer l'utilisateur en utilisant son email
-        const { data: users, error: usersError } = await supabase
-          .from('users')
-          .select('*')
-          .eq('email', email)
-          .single();
+        const { data: users, error: usersError } = await supabase.from('users').select('*').eq('email', email).single()
 
         if (usersError) {
-          throw new Error(usersError.message);
+          throw new Error(usersError.message)
         }
 
-        set({ user: users });
+        set({ user: users })
 
         // Rediriger vers la page de compte
-        window.location.href = '/account';
+        window.location.href = '/account'
       },
       signOut: async () => {
-        set({user: null})
+        set({ user: null })
         localStorage.removeItem('auth-store') // Remove user from local storage
         await supabase.auth.signOut()
 
@@ -78,9 +73,10 @@ export const useAuthStore = create<AuthStore>()(
         window.location.href = '/login'
       },
       isLoaded: false,
+      setIsLoaded: (isLoaded) => set({ isLoaded }),
     }),
     {
       name: 'auth-store', // Name the store (optional)
     }
   )
-);
+)
