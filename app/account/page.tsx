@@ -24,9 +24,9 @@ const Account = () => {
         if (error) throw new Error(error.message)
 
         setUser(data)
+        console.log(data)
       } catch (error: any) {
         console.error(error.message)
-
         // If there was an error fetching the user's information, we should redirect them back to the login page.
         router.push('/login')
       }
