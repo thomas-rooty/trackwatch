@@ -25,7 +25,6 @@ const MovieDetails = () => {
       .then((response) => response.json())
       .then((data) => {
         setShow(data)
-        console.log(data)
         setIsLoaded(true)
       })
     // Set default season to 1, otherwise it will get the previous selected season from another show

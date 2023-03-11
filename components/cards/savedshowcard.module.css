@@ -7,11 +7,10 @@
 .removeBtn {
   /* Remove button */
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 3px;
+  right: 3px;
   z-index: 1;
   border-radius: 3px;
-  background-color: #6b6b6b;
   border: none;
   outline: none;
   cursor: pointer;
@@ -24,10 +23,6 @@
   font-size: .9rem;
   color: #ffffff;
   padding: 5px 7px;
-}
-
-.removeBtn:hover {
-  background-color: #ffb721;
 }
 
 .showCard {

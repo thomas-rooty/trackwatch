@@ -7,6 +7,42 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 160px);
   grid-gap: 1rem;
+}
+
+.sectionTitleContainer {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-content: flex-start;
+  align-items: center;
+  margin: 0 0 1rem;
+}
+
+.rightSectionTitle {
+  display: flex;
+  align-items: center;
+}
+
+.trashIcon {
+  cursor: pointer;
+}
+
+.showAll {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.1rem;
+  color: #FFC857;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all ease-in .2s;
+  margin-left: .5rem;
+}
+
+.showAll:hover {
+  color: #ffa200;
+  text-decoration: underline;
+}
+
+.sectionTitle {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 2rem;
+  padding: 0;
 }
