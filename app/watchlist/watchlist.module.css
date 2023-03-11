@@ -1,0 +1,12 @@
+.container {
+  margin-left: 200px;
+  padding: 1rem;
+}
+
+.watchlistCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 160px);
+  grid-gap: 1rem;
+  justify-content: space-between;
+  align-content: flex-start;
+}

@@ -1,0 +1,94 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.removeBtn {
+  /* Remove button */
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 3px;
+  background-color: #6b6b6b;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.removeBtnText {
+  /* Remove button text */
+  font-family: "Roboto", sans-serif;
+  font-size: .9rem;
+  color: #ffffff;
+  padding: 5px 7px;
+}
+
+.removeBtn:hover {
+  background-color: #ffb721;
+}
+
+.showCard {
+  /* show card */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 280px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.showPoster {
+  /* show poster */
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  transition: all ease-in .2s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 245px;
+  border-radius: 5px;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #FFC857;
+  cursor: pointer;
+}
+
+.showCard:hover .overlay {
+  opacity: .5;
+}
+
+.showDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.showTitle {
+  /* show title */
+  font-family: "Aceh Light", sans-serif;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 160px;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.showVote {
+  font-family: "Roboto", sans-serif;
+  font-size: .8rem;
+}

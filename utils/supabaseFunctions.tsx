@@ -1,12 +1,9 @@
-import {supabase} from "@/utils/supabase";
+import { supabase } from '@/utils/supabase'
+import { useAuthStore } from '@/stores/auth'
 
 export const appendShowToUser = async (showId: number, userId: string | undefined) => {
   // Get current user data from database
-  const {data, error} = await supabase
-    .from('users')
-    .select('saved_shows')
-    .eq('id', userId)
-    .single()
+  const { data, error } = await supabase.from('users').select('saved_shows').eq('id', userId).single()
 
   if (error) {
     console.error(error)
@@ -24,25 +21,30 @@ export const appendShowToUser = async (showId: number, userId: string | undefine
   savedShows.push(showId)
 
   // Update user data in database
-  const {error: updateError} = await supabase
-    .from('users')
-    .update({saved_shows: savedShows})
-    .eq('id', userId)
+  const { error: updateError } = await supabase.from('users').update({ saved_shows: savedShows }).eq('id', userId)
 
   if (updateError) {
     console.error(updateError)
     return
   }
+
+  // Get new user form db
+  const { data: user, error: userError } = await supabase.from('users').select('*').eq('id', userId).single()
+
+  if (userError) {
+    console.error(userError)
+    return
+  }
+
+  // Update user data in auth store
+  const setUser = useAuthStore.getState().setUser
+  setUser(user)
 }
 
 // Function that remove show from user's saved_shows array
 export const removeShowFromUser = async (showId: number, userId: string | undefined) => {
   // Get current user data from database
-  const {data, error} = await supabase
-    .from('users')
-    .select('saved_shows')
-    .eq('id', userId)
-    .single()
+  const { data, error } = await supabase.from('users').select('saved_shows').eq('id', userId).single()
 
   if (error) {
     console.error(error)
@@ -60,25 +62,26 @@ export const removeShowFromUser = async (showId: number, userId: string | undefi
   const newSavedShows = savedShows.filter((show: number) => show !== showId)
 
   // Update user data in database
-  const {error: updateError} = await supabase
-    .from('users')
-    .update({saved_shows: newSavedShows})
-    .eq('id', userId)
+  const { error: updateError } = await supabase.from('users').update({ saved_shows: newSavedShows }).eq('id', userId)
 
   if (updateError) {
     console.error(updateError)
     return
+  }
+
+  // Update user data in auth store
+  const user = await useAuthStore.getState().user
+  const setUser = await useAuthStore.getState().setUser
+  if (user) {
+    user.saved_shows = newSavedShows
+    setUser(user)
   }
 }
 
 // Function that check if showId is in user's saved_shows array
 export const checkIfShowIsSaved = async (showId: number, userId: string | undefined) => {
   // Get current user data from database
-  const {data, error} = await supabase
-    .from('users')
-    .select('saved_shows')
-    .eq('id', userId)
-    .single()
+  const { data, error } = await supabase.from('users').select('saved_shows').eq('id', userId).single()
 
   if (error) {
     console.error(error)

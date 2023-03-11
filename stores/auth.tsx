@@ -19,6 +19,7 @@ export const useAuthStore = create<AuthStore>()(
       user: null,
       setUser: (user) => {
         set(() => ({ user }))
+        console.log('User updated in store')
         localStorage.setItem('user', JSON.stringify(user)) // Save user to local storage
       },
       signUp: async (name, email, password) => {
