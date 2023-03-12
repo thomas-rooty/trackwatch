@@ -1,39 +1,40 @@
 'use client'
-import styles from './category.module.css'
+import styles from './categories.module.css'
 import {useEffect} from "react";
 import {useDiscoverStore} from "@/stores/discover";
 import ShowCard from "@/components/cards/ShowCard";
 
-const PopularSeries = () => {
+const NewSeries = () => {
   // Get NEXT_PUBLIC_TMDB_API_KEY from .env.local
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   // Get the movies from the Discover store
-  const setPopular = useDiscoverStore(state => state.setPopular)
-  const popular = useDiscoverStore(state => state.popular)
+  const setRecent = useDiscoverStore(state => state.setRecent)
+  const recent = useDiscoverStore(state => state.recent)
 
-  // Get first date of last year and last day of this year
-  const twoYearAgo = new Date(new Date().setFullYear(new Date().getFullYear() - 2)).toISOString().slice(0, 10);
+  // Get current date with 0 padding
+  const today = new Date().toISOString().slice(0, 10);
+  const nextWeek = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
 
   // Call the API to get the popular movies
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&first_air_date.gte=${twoYearAgo}&sort_by=vote_count.desc&language=en-US&page=1&region=US`)
+    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&air_date.gte=${today}&air_date.lte=${nextWeek}&sort_by=vote_count.desc&with_original_language=en`)
       .then(response => response.json())
       .then(data => {
         // Limit to 8 movies
         data.results = data.results.slice(0, 8)
-        setPopular(data.results)
+        setRecent(data.results)
       })
-  }, [TMDB_API_KEY, setPopular])
+  }, [TMDB_API_KEY, nextWeek, setRecent, today])
 
   return (
     <div className={styles.container}>
       <div className={styles.sectionTitleContainer}>
-        <h1 className={styles.sectionTitle}>Recent popular series</h1>
+        <h1 className={styles.sectionTitle}>New episode soon</h1>
         <span className={styles.showAll}>Show all</span>
       </div>
       <ul className={styles.showList}>
-        {popular.map((show: any) => (
+        {recent.map((show: any) => (
           <li key={show.id}>
             <ShowCard show={show}/>
           </li>
@@ -43,4 +44,4 @@ const PopularSeries = () => {
   )
 }
 
-export default PopularSeries
+export default NewSeries

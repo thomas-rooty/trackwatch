@@ -1,9 +1,9 @@
 'use client'
 import styles from './discover.module.css'
 import Sidebar from '@/components/sidebar/Sidebar'
-import PopularSeries from '@/components/discover/PopularSeries'
-import OverallPopularSeries from '@/components/discover/OverallPopularSeries'
-import NewSoon from '@/components/discover/NewSoon'
+import PopularSeries from '@/components/categories/PopularSeries'
+import OverallPopularSeries from '@/components/categories/OverallPopularSeries'
+import NewSeries from '@/components/categories/NewSeries'
 
 const Discover = () => {
   return (
@@ -11,7 +11,7 @@ const Discover = () => {
       <Sidebar />
       <PopularSeries />
       <OverallPopularSeries />
-      <NewSoon />
+      <NewSeries />
     </div>
   )
 }

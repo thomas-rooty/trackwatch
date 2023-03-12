@@ -8,7 +8,6 @@ const SearchBar = () => {
   // Get search variables and functions from store
   const searchQuery = useSearchStore((state) => state.searchQuery)
   const setSearchQuery = useSearchStore((state) => state.setSearchQuery)
-  const searchResults = useSearchStore((state) => state.searchResults)
   const setSearchResults = useSearchStore((state) => state.setSearchResults)
 
   // Handle search query change
