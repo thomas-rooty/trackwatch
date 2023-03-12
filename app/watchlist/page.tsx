@@ -71,7 +71,6 @@ const Watchlist = () => {
               <Image src={Select} alt="Select" width={24} height={24} onClick={() => setSelectMode(true)} />
             )}
           </div>
-          <span className={styles.showAll}>Show all</span>
         </div>
       </div>
       {loaded && (
