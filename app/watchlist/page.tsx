@@ -48,6 +48,8 @@ const Watchlist = () => {
           handleShowRemove()
         }
       }
+      // Exit select mode
+      setSelectMode(false)
     }
   }
 
