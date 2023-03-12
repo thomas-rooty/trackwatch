@@ -39,13 +39,14 @@ const SavedShowCard = ({ showId, selectMode, setSelectedShows }: SavedShowCardPr
       // Add to selectedShows array
       setIsSelected((prev) => !prev)
       setShowAnimatedCheckIcon(true)
+      if (!isSelected && setSelectedShows) {
+        setSelectedShows((prev) => [...prev, showId])
+      } else if (isSelected && setSelectedShows) {
+        setSelectedShows((prev) => prev.filter((id: number) => id !== showId))
+      }
+      // Handle check icon animation
       setTimeout(() => {
         setShowAnimatedCheckIcon(false)
-        if (!isSelected && setSelectedShows) {
-          setSelectedShows((prev) => [...prev, showId])
-        } else if (isSelected && setSelectedShows) {
-          setSelectedShows((prev) => prev.filter((id: number) => id !== showId))
-        }
       }, 2000)
     } else {
       // Redirect to show page

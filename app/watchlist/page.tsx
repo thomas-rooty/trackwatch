@@ -53,6 +53,10 @@ const Watchlist = () => {
     }
   }
 
+  useEffect(() => {
+    console.log('selectedShows', selectedShows)
+  }, [selectedShows])
+
   return (
     <div className={styles.container}>
       <Sidebar />
