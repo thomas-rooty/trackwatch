@@ -105,10 +105,28 @@
   height: 40px;
   border-radius: 20px;
   border: 1px solid #2f2f2f;
-  padding: 0 15px;
+  padding: 0 30px 0 15px;
   font-family: "Aceh Light", sans-serif;
   font-size: 17px;
   color: #a8a8a8;
+}
+
+.cancelSearch {
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding-inline: 5px;
+  transition: all ease-in .2s;
+}
+
+.cancelSearch:hover {
+  background: #FFC857;
+  color: black;
+  border-color: #FFC857;
+  transform: scale(1.1);
 }
 
 .searchIconContainer {

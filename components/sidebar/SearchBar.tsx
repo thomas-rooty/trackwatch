@@ -2,7 +2,7 @@ import styles from './sidebar.module.css'
 import SearchbarIcon from '@/public/icons/searchbar.png'
 import Image from 'next/legacy/image'
 import { useSearchStore } from '@/stores/search'
-import { searchMulti } from '@/components/sidebar/searchFunctions';
+import { searchMulti } from '@/components/sidebar/searchFunctions'
 
 const SearchBar = () => {
   // Get search variables and functions from store
@@ -34,6 +34,15 @@ const SearchBar = () => {
             if (e.key === 'Enter') handleSearch()
           }}
         />
+        <div
+          className={styles.cancelSearch}
+          onClick={() => {
+            setSearchQuery('')
+            setSearchResults([])
+          }}
+        >
+          x
+        </div>
       </div>
     </div>
   )

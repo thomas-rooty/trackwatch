@@ -9,7 +9,6 @@ import Select from '@/public/icons/select.png'
 import SelectActive from '@/public/icons/select_active.png'
 import Trash from '@/public/icons/trash.png'
 import { removeShowFromUser } from '@/utils/supabaseFunctions'
-import SearchSeries from '@/components/categories/SearchSeries'
 
 const Watchlist = () => {
   const user = useAuthStore((state) => state.user)
@@ -82,7 +81,6 @@ const Watchlist = () => {
           ))}
         </div>
       )}
-      <SearchSeries />
     </div>
   )
 }
