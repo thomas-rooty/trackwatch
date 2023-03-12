@@ -1,4 +1,5 @@
 export interface SearchResult {
+  length: number;
   page: number;
   total_pages: number;
   total_results: number;
@@ -13,4 +14,6 @@ export interface SearchResult {
     known_for_department?: string;
     profile_path?: string | null;
   }>;
+
+  map(element: (show: any) => JSX.Element): any;
 }

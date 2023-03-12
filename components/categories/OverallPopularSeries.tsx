@@ -17,8 +17,8 @@ const OverallPopularSeries = () => {
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&sort_by=vote_count.desc&language=en-US&page=1&region=US`)
       .then(response => response.json())
       .then(data => {
-        // Limit to 8 movies
-        data.results = data.results.slice(0, 8)
+        // Limit to 9 movies
+        data.results = data.results.slice(0, 9)
         setPopularSeries(data.results)
       })
   }, [TMDB_API_KEY, setPopularSeries])
@@ -29,13 +29,11 @@ const OverallPopularSeries = () => {
         <h1 className={styles.sectionTitle}>Most popular series of all time</h1>
         <span className={styles.showAll}>Show all</span>
       </div>
-      <ul className={styles.showList}>
+      <div className={styles.cardsContainer}>
         {popularSeries.map((show: any) => (
-          <li key={show.id}>
-            <ShowCard show={show}/>
-          </li>
+          <ShowCard show={show} />
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

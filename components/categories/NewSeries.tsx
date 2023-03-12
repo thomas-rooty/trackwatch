@@ -21,8 +21,8 @@ const NewSeries = () => {
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&air_date.gte=${today}&air_date.lte=${nextWeek}&sort_by=vote_count.desc&with_original_language=en`)
       .then(response => response.json())
       .then(data => {
-        // Limit to 8 movies
-        data.results = data.results.slice(0, 8)
+        // Limit to 9 movies
+        data.results = data.results.slice(0, 9)
         setRecent(data.results)
       })
   }, [TMDB_API_KEY, nextWeek, setRecent, today])
@@ -33,13 +33,11 @@ const NewSeries = () => {
         <h1 className={styles.sectionTitle}>New episode soon</h1>
         <span className={styles.showAll}>Show all</span>
       </div>
-      <ul className={styles.showList}>
+      <div className={styles.cardsContainer}>
         {recent.map((show: any) => (
-          <li key={show.id}>
-            <ShowCard show={show}/>
-          </li>
+          <ShowCard show={show} />
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
