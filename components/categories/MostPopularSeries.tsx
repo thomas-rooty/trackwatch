@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {useDiscoverStore} from "@/stores/discover";
 import ShowCard from "@/components/cards/ShowCard";
 
-const OverallPopularSeries = () => {
+const MostPopularSeries = () => {
   // Get NEXT_PUBLIC_TMDB_API_KEY from .env.local
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
@@ -17,8 +17,8 @@ const OverallPopularSeries = () => {
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&sort_by=vote_count.desc&language=en-US&page=1&region=US`)
       .then(response => response.json())
       .then(data => {
-        // Limit to 9 movies
-        data.results = data.results.slice(0, 9)
+        // Limit to 12 movies
+        data.results = data.results.slice(0, 12)
         setPopularSeries(data.results)
       })
   }, [TMDB_API_KEY, setPopularSeries])
@@ -38,4 +38,4 @@ const OverallPopularSeries = () => {
   )
 }
 
-export default OverallPopularSeries
+export default MostPopularSeries

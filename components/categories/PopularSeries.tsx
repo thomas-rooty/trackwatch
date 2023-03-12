@@ -26,8 +26,8 @@ const PopularSeries = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        // Limit to 9 movies
-        data.results = data.results.slice(0, 9)
+        // Limit to 12 movies
+        data.results = data.results.slice(0, 12)
         setPopular(data.results)
         console.log(data.results)
       })

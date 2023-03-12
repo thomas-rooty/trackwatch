@@ -21,8 +21,8 @@ const NewSeries = () => {
     fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${TMDB_API_KEY}&air_date.gte=${today}&air_date.lte=${nextWeek}&sort_by=vote_count.desc&with_original_language=en`)
       .then(response => response.json())
       .then(data => {
-        // Limit to 9 movies
-        data.results = data.results.slice(0, 9)
+        // Limit to 12 movies
+        data.results = data.results.slice(0, 12)
         setRecent(data.results)
       })
   }, [TMDB_API_KEY, nextWeek, setRecent, today])
