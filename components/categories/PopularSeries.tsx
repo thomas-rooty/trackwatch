@@ -41,7 +41,7 @@ const PopularSeries = () => {
       </div>
       <div className={styles.cardsContainer}>
         {popular.map((show: any) => (
-          <ShowCard show={show} />
+          <ShowCard key={show.id} show={show} />
         ))}
       </div>
     </div>
