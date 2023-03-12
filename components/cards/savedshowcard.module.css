@@ -4,25 +4,22 @@
   flex-direction: column;
 }
 
-.removeBtn {
+.selectBtn {
   /* Remove button */
   position: absolute;
   top: 3px;
   right: 3px;
   z-index: 1;
-  border-radius: 3px;
   border: none;
   outline: none;
   cursor: pointer;
   width: fit-content;
+  transition: all ease-in .2s;
 }
 
-.removeBtnText {
-  /* Remove button text */
-  font-family: "Roboto", sans-serif;
-  font-size: .9rem;
-  color: #ffffff;
-  padding: 5px 7px;
+.selectBtn:hover {
+  filter: invert(24%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(105%) contrast(100%);
+  transform: scale(1.05);
 }
 
 .showCard {
@@ -57,13 +54,29 @@
   border-radius: 5px;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
+  transition: .2s ease-out;
   background-color: #FFC857;
   cursor: pointer;
 }
 
 .showCard:hover .overlay {
   opacity: .5;
+}
+
+.overlayDarken {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 245px;
+  border-radius: 5px;
+  width: 100%;
+  opacity: .5;
+  transition: .2s ease-in;
+  background-color: #000000;
+  cursor: default;
 }
 
 .showDetails {

@@ -21,7 +21,7 @@ const SavedShowCard = ({ showId, selectMode, setSelectedShows }: SavedShowCardPr
     vote_count: 0,
   })
 
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState(false)
 
   useEffect(() => {
     const getShowDetails = async () => {
@@ -33,13 +33,17 @@ const SavedShowCard = ({ showId, selectMode, setSelectedShows }: SavedShowCardPr
   }, [showId])
 
   const handleShowClick = () => {
-    router.push(`/show?id=${show.id}`)
+    if (selectMode) {
+      alert("Can't view show details in select mode !")
+    } else {
+      router.push(`/show?id=${show.id}`)
+    }
   }
 
-  const handleRemoveClick = () => {
-    setIsSelected((prev) => !prev);
+  const handleSelectClick = () => {
+    setIsSelected((prev) => !prev)
     if (!isSelected && setSelectedShows) {
-      setSelectedShows((prev) => [...prev, showId]);
+      setSelectedShows((prev) => [...prev, showId])
     } else if (isSelected && setSelectedShows) {
       setSelectedShows((prev) => prev.filter((id: number) => id !== showId))
     }
@@ -48,13 +52,17 @@ const SavedShowCard = ({ showId, selectMode, setSelectedShows }: SavedShowCardPr
   return (
     <div className={styles.container}>
       {selectMode && (
-        <div className={styles.removeBtn} onClick={handleRemoveClick}>
-          <Image src={isSelected ? SelectedActive : Selected} alt={'Select Btn'} className={styles.selectedBtn} width={30} height={30} />
+        <div className={styles.selectBtn} onClick={handleSelectClick}>
+          <Image src={isSelected ? SelectedActive : Selected} alt={'Select Btn'} width={30} height={30} />
         </div>
       )}
       <div className={styles.showCard} onClick={handleShowClick}>
         <Image src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} className={styles.showPoster} width={160} height={280} />
-        <div className={styles.overlay} />
+        {!selectMode ?
+          <div className={styles.overlay} />
+          :
+          <div className={styles.overlayDarken} />
+        }
         <div className={styles.showDetails}>
           <h3 className={styles.showTitle}>{show.name}</h3>
           <span className={styles.showVote}>{show.vote_count} votes</span>

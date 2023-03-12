@@ -17,13 +17,20 @@
   margin: 0 0 1rem;
 }
 
-.rightSectionTitle {
+.rightSectionTitle,
+.selectBtn {
   display: flex;
   align-items: center;
 }
 
-.trashIcon {
+.trashBtn,
+.selectBtn {
   cursor: pointer;
+  margin-right: 10px;
+}
+
+.trashBtn:hover {
+  filter: invert(32%) sepia(100%) saturate(7482%) hue-rotate(340deg) brightness(111%) contrast(112%);
 }
 
 .showAll {
