@@ -4,6 +4,7 @@ import styles from './sidebar.module.css';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
 import BrandInline from '@/public/img/brand_inline.png';
+import SearchBar from '@/components/sidebar/SearchBar';
 import Calendar from '@/public/icons/calendar.png';
 import CalendarActive from '@/public/icons/calendar_active.png';
 import Upcoming from '@/public/icons/upcoming.png';
@@ -46,6 +47,7 @@ const Sidebar = () => {
       <div className={styles.sidebarItemContainer}>
         <div className={styles.sidebarItemSection}>
           <ul className={styles.sidebarList}>
+            <SearchBar/>
             <Link href='/account'>
               <li className={`${styles.sidebarListItem} ${isActive('/account') ? styles.active : ''} ${isActive('/account') ? styles.activeSidebarListItem : ''}`}>
                 <Image src={getIcon(Profile, ProfileActive, isActive('/account'))} className={styles.svgIcon} width={24}
