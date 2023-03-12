@@ -23,7 +23,6 @@ const EpisodesTable = () => {
       .then(response => response.json())
       .then(data => {
         setSeasonDetails(data)
-        console.log(data)
       })
   }, [TMDB_API_KEY, selectedSeason, setSeasonDetails, show.id])
 
