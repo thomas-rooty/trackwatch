@@ -55,7 +55,7 @@ const Watchlist = () => {
     <div className={styles.container}>
       <Sidebar />
       <div className={styles.sectionTitleContainer}>
-        <h1 className={styles.sectionTitle}>New episode soon</h1>
+        <h1 className={styles.sectionTitle}>Favorites shows</h1>
         <div className={styles.rightSectionTitle}>
           {selectedShows.length > 0 && (
             <div className={styles.trashBtn} onClick={handleDeleteClick}>
