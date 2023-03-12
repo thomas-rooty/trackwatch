@@ -3,6 +3,7 @@ import SearchbarIcon from '@/public/icons/searchbar.png'
 import Image from 'next/legacy/image'
 import { useSearchStore } from '@/stores/search'
 import { searchMulti } from '@/components/sidebar/searchFunctions'
+import { usePathname } from 'next/navigation'
 
 const SearchBar = () => {
   // Get search variables and functions from store
@@ -16,6 +17,12 @@ const SearchBar = () => {
       const results = await searchMulti(searchQuery)
       setSearchResults(results)
     }
+  }
+
+  // Render search bar only on pages in this array
+  const authorizedPages = ['/discover']
+  if (!authorizedPages.includes(usePathname())) {
+    return null
   }
 
   return (
