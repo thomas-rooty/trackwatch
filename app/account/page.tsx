@@ -37,9 +37,7 @@ const Account = () => {
       <Sidebar />
       {user && (
         <div>
-          {user.saved_shows?.map((show) => (
-            <span key={show}>{show} </span>
-          ))}
+          <span>{user.email}</span>
         </div>
       )}
     </div>

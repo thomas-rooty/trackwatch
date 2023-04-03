@@ -35,7 +35,6 @@ const EpisodesTable = () => {
               <td>{episode.episode_number}</td>
               <td>{episode.name}</td>
               <td>{episode.air_date}</td>
-              <td>Vu</td>
             </tr>
           ))}
         </tbody>
