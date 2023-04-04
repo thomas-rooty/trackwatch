@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 15rem;
+}
+
+.brand {
+  width: 250px;
+  height: auto;
+}

@@ -1,0 +1,40 @@
+.buttonMain {
+  background-color: #ffac00;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.buttonSecondary {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 7px;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-weight: 550;
+  font-size: .9rem;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.buttonMain:hover {
+  background-color: #e39400;
+}
+
+.buttonSecondary:hover {
+  background-color: #e6e6e6;
+}

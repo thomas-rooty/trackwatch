@@ -37,7 +37,7 @@ const Account = () => {
     <div className={styles.container}>
       <Sidebar/>
       {user?.avatar_url && (
-        <Image src={user.avatar_url} alt="Avatar" width={100} height={100}/>
+        <Image src={user.avatar_url} alt="Avatar" width={300} height={300}/>
       )}
     </div>
   )
