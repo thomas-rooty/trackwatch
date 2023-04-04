@@ -1,9 +1,9 @@
 'use client'
-import {useState, useEffect} from 'react'
-import {useAuthStore} from '@/stores/auth'
+import { useState, useEffect } from 'react'
+import { useAuthStore } from '@/stores/auth'
 import Sidebar from '@/components/sidebar/Sidebar'
 import styles from './upcoming.module.css'
-import SavedShowCard from "@/components/cards/SavedShowCard";
+import SavedShowCard from '@/components/cards/SavedShowCard'
 
 const Upcoming = () => {
   const user = useAuthStore((state) => state.user)
@@ -24,27 +24,29 @@ const Upcoming = () => {
   // Fetch details for saved shows array
   useEffect(() => {
     const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
+
     async function fetchShowDetails(show: number) {
       const response = await fetch(`https://api.themoviedb.org/3/tv/${show}?api_key=${TMDB_API_KEY}`)
       const data = await response.json()
 
       if (data.next_episode_to_air) {
-        setSavedShowsDetails(prev => [...prev, data])
+        setSavedShowsDetails((prev) => [...prev, data])
       }
     }
-    savedShows.forEach(show => fetchShowDetails(show))
+
+    savedShows.forEach((show) => fetchShowDetails(show))
   }, [savedShows])
 
   return (
     <div className={styles.container}>
-      <Sidebar/>
+      <Sidebar />
       <div className={styles.sectionTitleContainer}>
         <h1 className={styles.sectionTitle}>Shows with an upcoming episodes in the next 7 days</h1>
       </div>
       {loaded && (
         <div className={styles.watchlistCardsContainer}>
           {savedShowsDetails.map((show) => (
-            <SavedShowCard key={show.id} showId={show.id} selectMode={null} setSelectedShows={undefined}/>
+            <SavedShowCard key={show.id} showId={show.id} selectMode={null} setSelectedShows={undefined} />
           ))}
         </div>
       )}

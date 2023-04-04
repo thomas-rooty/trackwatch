@@ -2,8 +2,8 @@
 import styles from './signup.module.css'
 import RegisterForm from '@/components/forms/RegisterForm'
 import Image from 'next/legacy/image'
-import Link from "next/link";
-import {ButtonSecondary} from "@/components/buttons/Buttons";
+import Link from 'next/link'
+import { ButtonSecondary } from '@/components/buttons/Buttons'
 
 const RegisterPage = () => {
   return (

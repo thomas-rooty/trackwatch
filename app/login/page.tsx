@@ -2,8 +2,8 @@
 import styles from './login.module.css'
 import LoginForm from '@/components/forms/LoginForm'
 import Image from 'next/legacy/image'
-import {ButtonSecondary} from "@/components/buttons/Buttons";
-import Link from "next/link";
+import { ButtonSecondary } from '@/components/buttons/Buttons'
+import Link from 'next/link'
 
 const LoginPage = () => {
   return (
