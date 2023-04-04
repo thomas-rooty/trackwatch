@@ -1,0 +1,94 @@
+.calendar {
+  font-family: Arial, sans-serif;
+  width: fit-content;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.title {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.week {
+  display: flex;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  min-height: 10rem;
+  width: 10rem;
+  border: 1px solid #2a2a2a;
+}
+
+.currentMonth {
+  background-color: #141414;
+}
+
+.otherMonth {
+  background-color: #141414;
+}
+
+.selected {
+  background-color: #FFC857;
+  color: #fff;
+}
+
+.date {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.event {
+  background-color: #ffaa00;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.event:hover {
+  background-color: #ffac16;
+  color: #fff;
+  transform: scale(1.05);
+}
