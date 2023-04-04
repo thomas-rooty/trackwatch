@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+.container > a {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+}
+
 .backgroundImg {
   filter: blur(8px);
 }
