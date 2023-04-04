@@ -41,7 +41,7 @@ const Upcoming = () => {
     <div className={styles.container}>
       <Sidebar />
       <div className={styles.sectionTitleContainer}>
-        <h1 className={styles.sectionTitle}>Shows with an upcoming episodes in the next 7 days</h1>
+        <h1 className={styles.sectionTitle}>Shows with an upcoming episode</h1>
       </div>
       {loaded && (
         <div className={styles.watchlistCardsContainer}>
