@@ -7,7 +7,7 @@ import CheckStatic from '@/public/icons/check_static.png'
 
 interface SavedShowCardProps {
   showId: number
-  selectMode: boolean
+  selectMode: boolean | null
   setSelectedShows?: (shows: (prev: any) => any[]) => void
 }
 

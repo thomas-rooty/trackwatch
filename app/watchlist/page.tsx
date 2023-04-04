@@ -1,14 +1,14 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Sidebar from '@/components/sidebar/Sidebar'
+import { removeShowFromUser } from '@/utils/supabaseFunctions'
 import { useAuthStore } from '@/stores/auth'
+import Sidebar from '@/components/sidebar/Sidebar'
 import SavedShowCard from '@/components/cards/SavedShowCard'
 import styles from './watchlist.module.css'
 import Image from 'next/legacy/image'
 import Select from '@/public/icons/select.png'
 import SelectActive from '@/public/icons/select_active.png'
 import Trash from '@/public/icons/trash.png'
-import { removeShowFromUser } from '@/utils/supabaseFunctions'
 
 const Watchlist = () => {
   const user = useAuthStore((state) => state.user)
