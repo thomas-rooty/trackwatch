@@ -24,22 +24,16 @@ const Upcoming = () => {
   // Fetch details for saved shows array
   useEffect(() => {
     const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
-    for (const show of savedShows) {
-      fetch(`https://api.themoviedb.org/3/tv/${show}?api_key=${TMDB_API_KEY}`)
-        .then(response => response.json())
-        .then(data => {
-          // if next_episode_to_air is null, don't add to savedShowsDetails
-          if (data.next_episode_to_air) (
-            setSavedShowsDetails(prev => [...prev, data])
-          )
-        })
-    }
-  }, [savedShows])
+    async function fetchShowDetails(show: number) {
+      const response = await fetch(`https://api.themoviedb.org/3/tv/${show}?api_key=${TMDB_API_KEY}`)
+      const data = await response.json()
 
-  // Ensure that user is loaded before rendering
-  useEffect(() => {
-    console.log(savedShowsDetails)
-  }, [savedShowsDetails])
+      if (data.next_episode_to_air) {
+        setSavedShowsDetails(prev => [...prev, data])
+      }
+    }
+    savedShows.forEach(show => fetchShowDetails(show))
+  }, [savedShows])
 
   return (
     <div className={styles.container}>
