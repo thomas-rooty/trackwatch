@@ -39,7 +39,7 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarLogoContainer}>
-        <Link href='/'>
+        <Link href='/discover'>
           <Image src={BrandInline} className={styles.sidebarLogo} alt='logo'/>
         </Link>
       </div>
