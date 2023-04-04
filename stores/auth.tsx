@@ -39,7 +39,7 @@ export const useAuthStore = create<AuthStore>()(
         } finally {
           // Login user and redirect to account page
           await get().signIn(email, password)
-          window.location.href = '/account'
+          window.location.href = '/discover'
         }
       },
       signIn: async (email, password) => {
@@ -62,7 +62,7 @@ export const useAuthStore = create<AuthStore>()(
         set({ user: users })
 
         // Rediriger vers la page de compte
-        window.location.href = '/account'
+        window.location.href = '/discover'
       },
       signOut: async () => {
         set({ user: null })

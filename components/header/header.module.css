@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+  background-image: url(../../public/img/background3.jpg);
+  background-size: cover;
+  background-position: 50% 65%;
+  background-repeat: no-repeat;
+  border-bottom: 7px solid #2a2a2a;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContent > * {
+  margin: 0.5rem;
+}
+
+.title {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 3rem;
+}
+
+.description {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.7rem;
+}
+
+.startSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.startSection > .description {
+  margin-right: 1rem;
+}

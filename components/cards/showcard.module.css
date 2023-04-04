@@ -16,7 +16,7 @@
 
 .addBtnText {
   /* Add button text */
-  font-family: "Roboto", sans-serif;
+  font-family: "Aceh Light", sans-serif;
   font-size: .9rem;
   color: #ffffff;
   padding: 5px 7px;
@@ -85,6 +85,6 @@
 }
 
 .showVote {
-  font-family: "Roboto", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: .8rem;
 }
