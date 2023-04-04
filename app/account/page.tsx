@@ -6,7 +6,7 @@ import {useAuthStore} from '@/stores/auth'
 import {supabase} from '@/utils/supabase'
 import styles from './account.module.css'
 import Sidebar from '@/components/sidebar/Sidebar'
-import Image from "next/legacy/image";
+import UserProfile from "@/components/profile/UserProfile";
 
 const Account = () => {
   const [user, setUser] = useState<User | null>(null)
@@ -36,8 +36,8 @@ const Account = () => {
   return (
     <div className={styles.container}>
       <Sidebar/>
-      {user?.avatar_url && (
-        <Image src={user.avatar_url} alt="Avatar" width={300} height={300}/>
+      {user && (
+        <UserProfile user={user}/>
       )}
     </div>
   )

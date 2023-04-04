@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem;
+}
+
+.container > * {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+/* Avatar section */
+
+.ppSection {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+
+.avatarUpper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.description {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: .5rem;
+}
+
+.avatar {
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.avatar:hover {
+  border-radius: 10px;
+}
+
+.ppUpload {
+  margin-left: 1rem;
+}
+
+/* Name section */
+
+.infoInput > input {
+  height: 2.2rem;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0 .5rem;
+  width: 300px;
+}
