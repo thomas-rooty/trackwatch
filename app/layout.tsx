@@ -16,7 +16,7 @@ export const metadata = {
     title: 'TrackWatch - The Ultimate Show Tracker',
     description: "TrackWatch helps you monitor your favorite shows, movies, and anime, and lets you know how much of your life you've spent watching them.",
     creator: 'Thomas CARON',
-    images: ['https://github.com/thomas-rooty/trackwatch/raw/main/public/img/brand_inline.png'],
+    images: ['https://github.com/thomas-rooty/trackwatch/raw/main/public/img/background-meta.png'],
   },
 }
 
