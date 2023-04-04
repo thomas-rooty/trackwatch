@@ -18,6 +18,14 @@ export const metadata = {
     creator: 'Thomas CARON',
     images: ['https://github.com/thomas-rooty/trackwatch/raw/main/public/img/background-meta.png'],
   },
+  openGraph: {
+    title: 'TrackWatch - The Ultimate Show Tracker',
+    description: "TrackWatch helps you monitor your favorite shows, movies, and anime, and lets you know how much of your life you've spent watching them.",
+    images: [{ url: 'https://github.com/thomas-rooty/trackwatch/raw/main/public/img/background-meta.png' }],
+    siteName: 'TrackWatch',
+    type: 'website',
+    url: 'https://trackwatch.live/',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
