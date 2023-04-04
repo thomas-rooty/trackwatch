@@ -61,3 +61,11 @@
   color: #fff;
   margin-bottom: 2rem;
 }
+
+.previewVideo {
+  transition: all 0.3s ease-in-out;
+}
+
+.previewVideo:hover {
+  transform: scale(1.05);
+}

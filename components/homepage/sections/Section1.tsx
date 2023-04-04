@@ -15,7 +15,7 @@ const Section1 = () => {
           </p>
         </div>
         <div className={styles.sectionContentRight}>
-          <Image src={DiscoverPreview} alt={'Discover new shows'} />
+          <Image src={DiscoverPreview} alt={'Discover new shows'} className={styles.previewVideo} />
         </div>
       </div>
     </div>
