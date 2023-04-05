@@ -1,5 +1,5 @@
 import { supabase } from '@/utils/supabase'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 
 export const appendShowToUser = async (showId: number, userId: string | undefined) => {
   // Get current user data from database
@@ -37,7 +37,7 @@ export const appendShowToUser = async (showId: number, userId: string | undefine
   }
 
   // Update user data in auth store
-  const setUser = useAuthStore.getState().setUser
+  const setUser = useUserStore.getState().setUser
   setUser(user)
 }
 
@@ -70,8 +70,8 @@ export const removeShowFromUser = async (showId: number, userId: string | undefi
   }
 
   // Update user data in auth store
-  const user = await useAuthStore.getState().user
-  const setUser = await useAuthStore.getState().setUser
+  const user = await useUserStore.getState().user
+  const setUser = await useUserStore.getState().setUser
   if (user) {
     user.saved_shows = newSavedShows
     setUser(user)

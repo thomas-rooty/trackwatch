@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware'
 import { supabase } from '@/utils/supabase'
 import type { User } from '@/types/user.interface'
 
-interface AuthStore {
+interface UserStore {
   user: User | null
   setUser: (user: User | null) => void
   signUp: (name: string, email: string, password: string) => Promise<void>
@@ -13,7 +13,7 @@ interface AuthStore {
   setIsLoaded: (isLoaded: boolean) => void
 }
 
-export const useAuthStore = create<AuthStore>()(
+export const useUserStore = create<UserStore>()(
   persist(
     (set, get) => ({
       user: null,

@@ -1,5 +1,5 @@
 import {usePathname} from 'next/navigation';
-import {useAuthStore} from '@/stores/auth';
+import {useUserStore} from '@/stores/user';
 import styles from './sidebar.module.css';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
@@ -34,7 +34,7 @@ const Sidebar = () => {
   };
 
   // Sign out callback
-  const _signOut = useAuthStore((state) => state.signOut)
+  const _signOut = useUserStore((state) => state.signOut)
 
   return (
     <div className={styles.sidebar}>

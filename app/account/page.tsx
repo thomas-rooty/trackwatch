@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import type { User } from '@/types/user.interface'
 import { useRouter } from 'next/navigation'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 import { supabase } from '@/utils/supabase'
 import styles from './account.module.css'
 import Sidebar from '@/components/sidebar/Sidebar'
@@ -11,7 +11,7 @@ import UserProfile from '@/components/profile/UserProfile'
 const Account = () => {
   const [user, setUser] = useState<User | null>(null)
   const router = useRouter()
-  const { user: currentUser } = useAuthStore()
+  const { user: currentUser } = useUserStore()
 
   useEffect(() => {
     const fetchUser = async () => {

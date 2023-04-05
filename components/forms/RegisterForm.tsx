@@ -1,7 +1,7 @@
 'use client'
 import styles from './Forms.module.css'
 import React, { useState } from 'react'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 import Image from 'next/legacy/image'
 import BrandLogo from '@/public/img/brand_logo.png'
 
@@ -9,7 +9,7 @@ const RegisterForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const signUp = useAuthStore((state) => state.signUp)
+  const signUp = useUserStore((state) => state.signUp)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

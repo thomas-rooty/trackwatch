@@ -1,12 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 import Sidebar from '@/components/sidebar/Sidebar'
 import styles from './calendar.module.css'
 import CalendarComponent from '@/components/calendar/CalendarComponent'
 
 const Calendar = () => {
-  const user = useAuthStore((state) => state.user)
+  const user = useUserStore((state) => state.user)
   const [loaded, setLoaded] = useState(false)
   const [savedShows, setSavedShows] = useState<number[]>([])
   const [savedShowsDetails, setSavedShowsDetails] = useState<any[]>([])

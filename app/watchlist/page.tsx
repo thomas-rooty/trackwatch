@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { removeShowFromUser } from '@/utils/supabaseFunctions'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 import Sidebar from '@/components/sidebar/Sidebar'
 import SavedShowCard from '@/components/cards/SavedShowCard'
 import styles from './watchlist.module.css'
@@ -11,7 +11,7 @@ import SelectActive from '@/public/icons/select_active.png'
 import Trash from '@/public/icons/trash.png'
 
 const Watchlist = () => {
-  const user = useAuthStore((state) => state.user)
+  const user = useUserStore((state) => state.user)
   const [savedShows, setSavedShows] = useState<number[]>([])
   const [loaded, setLoaded] = useState(false)
   const [selectMode, setSelectMode] = useState(false)

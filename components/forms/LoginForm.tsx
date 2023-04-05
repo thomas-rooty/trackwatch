@@ -1,14 +1,14 @@
 'use client'
 import styles from './Forms.module.css'
 import React, { useState } from 'react'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 import Image from 'next/legacy/image'
 import BrandLogo from '@/public/img/brand_logo.png'
 
 const LoginForm = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const signIn = useAuthStore((state) => state.signIn)
+  const signIn = useUserStore((state) => state.signIn)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

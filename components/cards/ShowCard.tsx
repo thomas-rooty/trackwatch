@@ -2,7 +2,7 @@ import styles from './showcard.module.css'
 import Image from 'next/legacy/image'
 import { useRouter } from 'next/navigation'
 import { Show } from '@/types/show.interface'
-import { useAuthStore } from '@/stores/auth'
+import { useUserStore } from '@/stores/user'
 import { appendShowToUser, checkIfShowIsSaved, removeShowFromUser } from '@/utils/supabaseFunctions'
 import { useState, useEffect, SetStateAction } from 'react'
 
@@ -11,7 +11,7 @@ const ShowCard = ({ show }: { show: Show }) => {
   const [isSaved, setIsSaved] = useState<boolean>(false)
 
   // Get user from store
-  const user = useAuthStore((state) => state.user)
+  const user = useUserStore((state) => state.user)
 
   useEffect(() => {
     const checkSavedShow = async () => {
