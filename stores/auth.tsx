@@ -37,9 +37,9 @@ export const useAuthStore = create<AuthStore>()(
         } catch (error: any) {
           alert(error.message)
         } finally {
-          // Login user and redirect to account page
-          await get().signIn(email, password)
-          window.location.href = '/discover'
+          // Alert user that they need to confirm their email
+          alert('Please confirm your email address by clicking the link we sent you.')
+          window.location.href = '/login'
         }
       },
       signIn: async (email, password) => {
