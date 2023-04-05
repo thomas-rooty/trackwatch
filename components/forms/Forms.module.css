@@ -33,8 +33,16 @@
   width: 100%;
 }
 
+.label {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1rem;
+  color: #545454;
+  margin: 0;
+}
+
 .input {
-  margin: 10px 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 7px;

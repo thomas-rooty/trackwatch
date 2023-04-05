@@ -1,9 +1,9 @@
-"use client"
+'use client'
 import styles from './Forms.module.css'
-import React, {useState} from 'react'
-import {useAuthStore} from "@/stores/auth";
-import Image from 'next/legacy/image';
-import BrandLogo from '@/public/img/brand_logo.png';
+import React, { useState } from 'react'
+import { useAuthStore } from '@/stores/auth'
+import Image from 'next/legacy/image'
+import BrandLogo from '@/public/img/brand_logo.png'
 
 const RegisterForm = () => {
   const [name, setName] = useState('')
@@ -15,7 +15,6 @@ const RegisterForm = () => {
     e.preventDefault()
     try {
       await signUp(name, email, password)
-      console.log('User created!')
     } catch (error: any) {
       alert(error.message)
     }
@@ -24,38 +23,49 @@ const RegisterForm = () => {
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <Image src={BrandLogo} className={styles.logo} alt='logo' />
+        <Image src={BrandLogo} className={styles.logo} alt="logo" />
         <p>Binge smarter, not harder.</p>
       </div>
       <form onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.label} htmlFor="name">
+          Name
+        </label>
         <input
-          type='text'
+          type="text"
           className={styles.input}
-          placeholder={'Name'}
+          placeholder={'...'}
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
+        <label className={styles.label} htmlFor="email">
+          Email
+        </label>
         <input
-          type='email'
+          type="email"
           className={styles.input}
-          placeholder={'Email address'}
+          placeholder={'...'}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+        <label className={styles.label} htmlFor="password">
+          Password
+        </label>
         <input
-          type='password'
+          type="password"
           className={styles.input}
-          placeholder={'Password'}
+          placeholder={'...'}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className={styles.submitBtn} type='submit'>Sign In</button>
+        <button className={styles.submitBtn} type="submit">
+          Sign In
+        </button>
         <div className={styles.formFooter}>
           <p>Already have an account?</p>
-          <a href='/login'>Sign in</a>
+          <a href="/login">Sign in</a>
         </div>
       </form>
     </div>
