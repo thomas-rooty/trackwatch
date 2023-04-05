@@ -19,7 +19,6 @@ export const useAuthStore = create<AuthStore>()(
       user: null,
       setUser: (user) => {
         set(() => ({ user }))
-        localStorage.setItem('user', JSON.stringify(user)) // Save user to local storage
       },
       signUp: async (name, email, password) => {
         const { data, error } = await supabase.auth.signUp({
@@ -43,7 +42,7 @@ export const useAuthStore = create<AuthStore>()(
         }
       },
       signIn: async (email, password) => {
-        const { data: user, error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signInWithPassword({
           email,
           password,
         })
