@@ -1,5 +1,5 @@
-import {create} from 'zustand'
-import {Show} from '@/types/show.interface';
+import { create } from 'zustand'
+import { Show } from '@/types/show.interface'
 
 interface ShowStore {
   show: Show
@@ -12,11 +12,11 @@ interface ShowStore {
 
 export const useShowStore = create<ShowStore>((set) => ({
   show: {} as Show,
-  setShow: (show) => set({show}),
+  setShow: (show) => set({ show }),
   selectedSeason: 1,
   setSelectedSeason: (selectedSeason) => {
-    set({selectedSeason})
+    set({ selectedSeason })
   },
   isLoaded: false,
-  setIsLoaded: (isLoaded) => set({isLoaded}),
+  setIsLoaded: (isLoaded) => set({ isLoaded }),
 }))

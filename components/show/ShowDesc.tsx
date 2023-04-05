@@ -1,9 +1,9 @@
-import styles from './show.module.css';
-import { useShowStore } from '@/stores/show';
+import styles from './show.module.css'
+import { useShowStore } from '@/stores/show'
 
 const ShowDesc = () => {
   // Get show from store
-  const show = useShowStore(state => state.show);
+  const show = useShowStore((state) => state.show)
 
   // Store useful data and threat them in variables to improve readability at the return
   const network = show.networks[0].name
@@ -15,10 +15,12 @@ const ShowDesc = () => {
 
   return (
     <div className={styles.showDesc}>
-      <h3 className={styles.showDescTitle}>{status} • {network} • {totalSeasons}</h3>
+      <h3 className={styles.showDescTitle}>
+        {status} • {network} • {totalSeasons}
+      </h3>
       <p className={styles.showDescText}>{show.overview}</p>
     </div>
-  );
-};
+  )
+}
 
-export default ShowDesc;
+export default ShowDesc
