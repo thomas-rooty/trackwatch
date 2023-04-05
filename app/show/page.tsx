@@ -21,14 +21,16 @@ const MovieDetails = () => {
 
   // fetch movie details
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
-      .then((response) => response.json())
-      .then((data) => {
-        setShow(data)
-        setIsLoaded(true)
-      })
-    // Set default season to 1, otherwise it will get the previous selected season from another show
-    setSelectedSeason(1)
+    async function fetchDetails() {
+      const response = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
+      const data = await response.json()
+      setShow(data)
+      setIsLoaded(true)
+      // Set default season to 1, otherwise it will get the previous selected season from another show
+      setSelectedSeason(1)
+    }
+
+    fetchDetails()
   }, [TMDB_API_KEY, id, setIsLoaded, setShow])
 
   return (

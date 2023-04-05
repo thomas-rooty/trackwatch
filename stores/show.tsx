@@ -16,7 +16,6 @@ export const useShowStore = create<ShowStore>((set) => ({
   selectedSeason: 1,
   setSelectedSeason: (selectedSeason) => {
     set({selectedSeason})
-    console.log(selectedSeason)
   },
   isLoaded: false,
   setIsLoaded: (isLoaded) => set({isLoaded}),
