@@ -7,14 +7,21 @@
 }
 
 .container > * {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .title {
   font-family: "Aceh Light", sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: .5rem;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 /* Avatar section */

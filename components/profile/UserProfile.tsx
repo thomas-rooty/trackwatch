@@ -1,12 +1,25 @@
 import styles from './userprofile.module.css'
-import { ButtonMain, ButtonSecondary } from '@/components/buttons/Buttons'
 import Image from 'next/legacy/image'
 import { useEffect, useState } from 'react'
+import { ButtonMain, ButtonSecondary } from '@/components/buttons/Buttons'
 import { useUserStore } from '@/stores/user'
+import { useSavedShowsStore } from '@/stores/savedshow'
+import {
+  calculateEpisodesWatched,
+  calculateSeasonsWatched,
+  calculateShowsWatched,
+  calculateMinutesWatched,
+} from '@/utils/statisticsFunctions'
+import DayCounter from '@/components/profile/DayCounter'
 
 const UserProfile = () => {
-  const user = useUserStore((state) => state.user)
   const [loaded, setLoaded] = useState(false)
+  const user = useUserStore((state) => state.user)
+  const showDetails = useSavedShowsStore((state) => state.showDetails)
+  const [episodesWatched, setEpisodesWatched] = useState(0)
+  const [seasonsWatched, setSeasonsWatched] = useState(0)
+  const [showsWatched, setShowsWatched] = useState(0)
+  const [minutesWatched, setMinutesWatched] = useState(0)
 
   useEffect(() => {
     if (user) {
@@ -14,11 +27,35 @@ const UserProfile = () => {
     }
   }, [user])
 
+  useEffect(() => {
+    if (showDetails) {
+      setEpisodesWatched(calculateEpisodesWatched(showDetails))
+      setSeasonsWatched(calculateSeasonsWatched(showDetails))
+      setShowsWatched(calculateShowsWatched(showDetails))
+      setMinutesWatched(calculateMinutesWatched(showDetails))
+    }
+  }, [showDetails])
+
   return (
     <>
       {loaded && (
         <div className={styles.container}>
-          <h1 className={styles.title}>Welcome {user?.name}</h1>
+          <div className={styles.header}>
+            <h1 className={styles.title}>
+              Welcome {user?.name}, you've watched a total of{' '}
+              <b>{showsWatched}</b> shows, which represents a total of{' '}
+              <b>{seasonsWatched}</b> seasons and <b>{episodesWatched}</b>{' '}
+              episodes!
+            </h1>
+            <h3 className={styles.subtitle}>
+              Approximatively, you've accumulated a total of{' '}
+              <b>{minutesWatched}</b> minutes screen time! Whether you're
+              horrified or proud, we don't judge!
+            </h3>
+          </div>
+          <div className={styles.counter}>
+            <DayCounter minutes={minutesWatched} />
+          </div>
           <div className={styles.ppSection}>
             <div className={styles.avatarUpper}>
               <p className={styles.description}>Avatar</p>
