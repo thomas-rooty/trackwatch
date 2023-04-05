@@ -11,6 +11,10 @@
   overflow-y: hidden;
 }
 
+.active {
+  grid-auto-rows: auto!important;
+}
+
 .sectionTitleContainer {
   display: flex;
   flex-direction: row;
