@@ -1,4 +1,5 @@
 import { useShowStore } from '@/stores/show'
+import { ActorProps } from '@/types/actor.interface'
 import styles from './show.module.css'
 import ActorCard from '@/components/cards/ActorCard'
 import Image from 'next/legacy/image'
@@ -15,8 +16,8 @@ const ShowCasting = () => {
         <span className={styles.title}>Casting</span>
       </h3>
       <div className={styles.casting}>
-        {show.cast.map((actor) => (
-          <ActorCard actor={actor} key={actor.id} />
+        {show.cast.map(({ actor }: ActorProps) => (
+          <ActorCard key={actor.id} actor={actor} />
         ))}
       </div>
     </div>

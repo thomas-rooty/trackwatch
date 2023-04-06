@@ -1,21 +1,6 @@
 import styles from './actorcard.module.css'
 import Image from 'next/legacy/image'
-
-interface ActorProps {
-  actor: {
-    adult: boolean
-    character: string
-    credit_id: string
-    gender: number
-    id: number
-    known_for_department: string
-    name: string
-    order: number
-    original_name: string
-    popularity: number
-    profile_path: string | null
-  }
-}
+import { ActorProps } from '@/types/actor.interface'
 
 const ActorCard = ({ actor }: ActorProps) => {
   return (

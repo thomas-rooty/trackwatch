@@ -1,4 +1,5 @@
 export interface Show {
+  cast: never[]
   backdrop_path: string | null
   created_by: Array<{
     id: number
