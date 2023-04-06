@@ -1,5 +1,17 @@
 export interface Show {
-  cast: never[]
+  cast: Array<{
+    adult: boolean
+    character: string
+    credit_id: string
+    gender: number
+    id: number
+    known_for_department: string
+    name: string
+    order: number
+    original_name: string
+    popularity: number
+    profile_path: string | null
+  }>
   backdrop_path: string | null
   created_by: Array<{
     id: number
