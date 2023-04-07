@@ -8,6 +8,9 @@
   width: 100%;
   padding: 3.5rem 200px 3.5rem 0;
   background-color: #171717;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .showTitle {

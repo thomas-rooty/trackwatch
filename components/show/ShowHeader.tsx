@@ -11,8 +11,18 @@ const ShowHeader = () => {
   // Round vote average to nearest 0.01
   const voteAverage = Math.round(show.vote_average * 100) / 100
 
+  // Style the container with the poster path
+  const bgStyle = {
+    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,1)), url(https://image.tmdb.org/t/p/original${show.backdrop_path})`,
+  }
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        ...bgStyle,
+      }}
+    >
       <h1 className={styles.showTitle}>
         {show.name} ({releaseYear})
       </h1>
@@ -24,7 +34,9 @@ const ShowHeader = () => {
           </span>
         ))}
       </span>
-      <span className={styles.inProduction}>{show.in_production ? 'In production' : 'Ended'}</span>
+      <span className={styles.inProduction}>
+        {show.in_production ? 'In production' : 'Ended'}
+      </span>
       <span className={styles.voteAverage}>SCORE : {voteAverage}/10</span>
     </div>
   )
