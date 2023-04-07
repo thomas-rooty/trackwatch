@@ -3,6 +3,7 @@ import styles from './show.module.css'
 import ActorCard from '@/components/cards/ActorCard'
 import Image from 'next/legacy/image'
 import Casting from '@/public/icons/casting.svg'
+import Link from 'next/link'
 
 const ShowCasting = () => {
   const show = useShowStore((state) => state.show)
@@ -16,7 +17,9 @@ const ShowCasting = () => {
       </h3>
       <div className={styles.casting}>
         {show?.cast?.map((actor) => (
-          <ActorCard key={actor.id} actor={actor} />
+          <Link href={`/actor?name=${actor.name}`} key={actor.id}>
+            <ActorCard actor={actor} />
+          </Link>
         ))}
       </div>
     </div>

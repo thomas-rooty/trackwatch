@@ -1,0 +1,6 @@
+.container {
+  width: calc(100% - 200px);
+  height: fit-content;
+  margin-left: 200px;
+  background: white;
+}

@@ -1,0 +1,170 @@
+/* show Header Component */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 3.5rem 200px 3.5rem 0;
+  background-color: #171717;
+}
+
+.actorTitle {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 2.5rem;
+  text-shadow: 0 0 0.5rem #000;
+  color: #fff;
+}
+
+.genres {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 0 0.5rem #000;
+  margin-top: 0.5rem;
+}
+
+.voteAverage,
+.birthday {
+  position: absolute;
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.birthday {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.voteAverage {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* show Description Component */
+.actorDesc {
+  background-color: #eeeeee;
+  font-family: "Aceh Light", sans-serif;
+  color: black;
+  padding: 1rem;
+  border-bottom: 1px solid #cccccc;
+}
+
+.actorDescTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.actorDescContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.actorDescText {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  color: #333333;
+  width: calc(100% - 160px);
+}
+
+/* ShowEpisode Component */
+.showContent {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  background-color: #ffffff;
+  font-family: "Aceh Light", sans-serif;
+  color: #333333;
+  padding: 1rem;
+}
+
+.left {
+  width: 350px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: "Aceh Light", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.episodeText {
+  color: #333333;
+  padding-top: 3px;
+  padding-left: 4px;
+}
+
+.posterImg {
+  border-radius: 7px;
+}
+
+/* Right section */
+.right {
+  flex-grow: 1;
+}
+
+.sectionSeasons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Trailer component */
+.trailerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 100%;
+}
+
+.trailerWrapper {
+  width: 100%;
+}
+
+.trailer {
+  border: 0;
+  width: 100%;
+  height: 800px;
+  border-radius: 15px;
+}
+
+/* Casting Component */
+.castingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: "Aceh Light", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  padding-left: 4px;
+  padding-top: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.casting {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 160px);
+  grid-gap: 1rem;
+  width: 100%;
+}
