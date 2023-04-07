@@ -13,4 +13,5 @@ export interface ActorDetailsProps {
   original_name: string
   popularity: number
   profile_path: string | null
+  shows: any[]
 }

@@ -4,11 +4,6 @@ import { useActorStore } from '@/stores/actor'
 const ActorHeader = () => {
   // Get actor from store
   const actor = useActorStore((state) => state.actor)
-
-  setTimeout(() => {
-    console.log(actor)
-  }, 1000)
-
   return (
     <div className={styles.container}>
       <h1 className={styles.actorTitle}>

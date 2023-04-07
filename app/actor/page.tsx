@@ -6,6 +6,7 @@ import styles from './actor.module.css'
 import Sidebar from '@/components/sidebar/Sidebar'
 import ActorHeader from '@/components/actor/ActorHeader'
 import ActorDesc from '@/components/actor/ActorDesc'
+import ActorShows from '@/components/actor/ActorShows'
 
 const MovieDetails = () => {
   const searchParams = useSearchParams()
@@ -13,6 +14,7 @@ const MovieDetails = () => {
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   // Get store values
+  const actor = useActorStore((state) => state.actor)
   const setActor = useActorStore((state) => state.setActor)
   const isLoaded = useActorStore((state) => state.isLoaded)
   const setIsLoaded = useActorStore((state) => state.setIsLoaded)
@@ -46,12 +48,17 @@ const MovieDetails = () => {
     fetchData()
   }, [])
 
+  setTimeout(() => {
+    console.log(actor)
+  }, 1000)
+
   return (
     isLoaded && (
       <div className={styles.container}>
         <Sidebar />
         <ActorHeader />
         <ActorDesc />
+        <ActorShows />
       </div>
     )
   )

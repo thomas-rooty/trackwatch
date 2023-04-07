@@ -17,7 +17,7 @@ const ShowCasting = () => {
       </h3>
       <div className={styles.casting}>
         {show?.cast?.map((actor) => (
-          <Link href={`/actor?name=${actor.name}`} key={actor.id}>
+          <Link href={`/actor?id=${actor.id}`} key={actor.id}>
             <ActorCard actor={actor} />
           </Link>
         ))}

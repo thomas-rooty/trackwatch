@@ -5,9 +5,6 @@ import Image from 'next/legacy/image'
 const ShowDesc = () => {
   // Get actor from store
   const actor = useActorStore((state) => state.actor)
-
-  // Store useful data and threat them in variables to improve readability at the return
-
   return (
     <div className={styles.actorDesc}>
       <h3 className={styles.actorDescTitle}>{actor.name}</h3>
