@@ -12,6 +12,7 @@ export interface Show {
     popularity: number
     profile_path: string | null
   }>
+  trailer: string
   backdrop_path: string | null
   created_by: Array<{
     id: number

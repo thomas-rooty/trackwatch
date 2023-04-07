@@ -112,6 +112,26 @@
   align-items: flex-end;
 }
 
+/* Trailer component */
+.trailerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 100%;
+}
+
+.trailerWrapper {
+  width: 100%;
+}
+
+.trailer {
+  border: 0;
+  width: 100%;
+  height: 800px;
+  border-radius: 15px;
+}
+
 /* Casting Component */
 .castingContainer {
   display: flex;
