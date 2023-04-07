@@ -11,7 +11,6 @@ const Account = () => {
   const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY
 
   // Get values from store
-  const showDetails = useSavedShowsStore((state) => state.showDetails)
   const setShowDetails = useSavedShowsStore((state) => state.setShowDetails)
   const user = useUserStore((state) => state.user)
   const saved_shows = user?.saved_shows

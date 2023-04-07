@@ -37,7 +37,7 @@ export const calculateMinutesWatched = (showDetails: ShowDetails[]) => {
 export const calculateShowsWatched = (showDetails: ShowDetails[]) => {
   let showsWatched = 0
 
-  showDetails?.forEach((show: ShowDetails) => {
+  showDetails?.forEach(() => {
     showsWatched++
   })
 
