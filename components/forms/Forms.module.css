@@ -107,3 +107,10 @@
 .formFooter a:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 950px) {
+  .card {
+    width: 90%;
+    padding: 50px 30px;
+  }
+}

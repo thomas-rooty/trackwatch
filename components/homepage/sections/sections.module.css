@@ -69,3 +69,29 @@
 .previewVideo:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 950px) {
+  .sectionContent {
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  .sectionContentLeft {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sectionContentRight {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+}

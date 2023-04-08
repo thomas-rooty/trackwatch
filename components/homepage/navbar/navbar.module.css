@@ -12,3 +12,14 @@
   width: 250px;
   height: auto;
 }
+
+@media (max-width: 950px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .brand {
+    width: 150px;
+    height: auto;
+  }
+}

@@ -42,3 +42,19 @@
 .startSection > .description {
   margin-right: 1rem;
 }
+
+
+@media (max-width: 980px) {
+  .header {
+    height: 40vh;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .description {
+    display: none;
+  }
+}
