@@ -111,6 +111,14 @@
 @media (max-width: 950px) {
   .card {
     width: 90%;
-    padding: 50px 30px;
+    padding: 20px 30px;
+  }
+
+  .cardHeader {
+    margin-bottom: 20px;
+  }
+
+  .formFooter {
+    margin-top: 10px;
   }
 }
