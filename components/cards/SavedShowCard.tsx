@@ -26,7 +26,9 @@ const SavedShowCard = ({ showId, selectMode, setSelectedShows }: SavedShowCardPr
 
   useEffect(() => {
     const getShowDetails = async () => {
-      const res = await fetch(`https://api.themoviedb.org/3/tv/${showId}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`)
+      const res = await fetch(
+        `https://api.themoviedb.org/3/tv/${showId}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`
+      )
       const data = await res.json()
       setShow(data)
     }
@@ -58,22 +60,23 @@ const SavedShowCard = ({ showId, selectMode, setSelectedShows }: SavedShowCardPr
     <div className={styles.container}>
       {selectMode && (
         <div className={styles.selectBtn}>
-          {isSelected && (
-            showAnimatedCheckIcon ? (
+          {isSelected &&
+            (showAnimatedCheckIcon ? (
               <Image src={CheckAnimation} alt={'Check Icon'} width={100} height={100} className={styles.checkIcon} />
             ) : (
               <Image src={CheckStatic} alt={'Check Icon'} width={100} height={100} className={styles.checkIcon} />
-            )
-          )}
+            ))}
         </div>
       )}
       <div className={selectMode ? styles.showCardSelect : styles.showCard} onClick={handleShowClick}>
-        <Image src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} className={styles.showPoster} width={160} height={280} />
-        {!selectMode ?
-          <div className={styles.overlay} />
-          :
-          !isSelected && <div className={styles.overlayDarken}></div>
-        }
+        <Image
+          src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
+          alt={show.name}
+          className={styles.showPoster}
+          width={160}
+          height={280}
+        />
+        {!selectMode ? <div className={styles.overlay} /> : !isSelected && <div className={styles.overlayDarken}></div>}
         <div className={styles.showDetails}>
           <h3 className={styles.showTitle}>{show.name}</h3>
           <span className={styles.showVote}>{show.vote_count} votes</span>

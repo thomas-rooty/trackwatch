@@ -4,5 +4,5 @@ export type User = {
   email?: string
   preferences?: string[]
   saved_shows?: number[]
-  avatar_url?: string;
+  avatar_url?: string
 }

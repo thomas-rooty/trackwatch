@@ -4,14 +4,14 @@
   border-radius: 7px;
   color: white;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 12px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .buttonSecondary {
@@ -21,14 +21,14 @@
   color: black;
   font-family: Arial, sans-serif;
   font-weight: 550;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 12px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .buttonMain:hover {

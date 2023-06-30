@@ -6,9 +6,7 @@ const ActorHeader = () => {
   const actor = useActorStore((state) => state.actor)
   return (
     <div className={styles.container}>
-      <h1 className={styles.actorTitle}>
-        {actor.name}
-      </h1>
+      <h1 className={styles.actorTitle}>{actor.name}</h1>
       <span className={styles.birthday}>{actor.birthday}</span>
       <span className={styles.voteAverage}>POPULARITY : {actor.popularity}</span>
     </div>

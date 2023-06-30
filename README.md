@@ -1,4 +1,5 @@
 # TrackWatch
+
 ![background-meta.png](https://github.com/thomas-rooty/trackwatch/raw/main/public/img/background-meta.png)
 
 TrackWatch is an app that helps you monitor your favorite shows and anime. With TrackWatch, you'll never forget where you left off, how many episodes you have left, or when the next episode is. Plus, with our total lifespan lost tracker, you'll be able to see how much time you've spent watching them!
@@ -17,6 +18,7 @@ To get started with TrackWatch, simply access the app from https://trackwatch.li
 From there, you can monitor your progress, track your screen time, and get personalized recommendations. Plus, with notifications, you'll never miss a beat when it comes to your favorite shows.
 
 # Technologies Used
+
 TrackWatch was built using the following technologies:
 
 - NextJS

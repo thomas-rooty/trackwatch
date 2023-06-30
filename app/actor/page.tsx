@@ -22,9 +22,7 @@ const MovieDetails = () => {
   // Fetch actor details
   useEffect(() => {
     async function fetchActorDetails() {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/person/${id}?api_key=${TMDB_API_KEY}&language=en-US`
-      )
+      const response = await fetch(`https://api.themoviedb.org/3/person/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
       return await response.json()
     }
 

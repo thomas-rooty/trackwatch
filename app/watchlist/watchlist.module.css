@@ -34,13 +34,13 @@
 }
 
 .showAll {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1.1rem;
-  color: #FFC857;
+  color: #ffc857;
   text-decoration: none;
   cursor: pointer;
-  transition: all ease-in .2s;
-  margin-left: .5rem;
+  transition: all ease-in 0.2s;
+  margin-left: 0.5rem;
 }
 
 .showAll:hover {
@@ -49,7 +49,7 @@
 }
 
 .sectionTitle {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 2rem;
   padding: 0;
 }

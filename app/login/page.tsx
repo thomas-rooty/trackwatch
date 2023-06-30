@@ -11,7 +11,13 @@ const LoginPage = () => {
       <Link href={'/'}>
         <ButtonMain>{'<'}</ButtonMain>
       </Link>
-      <Image src="/img/background.jpg" className={styles.backgroundImg} alt="background" layout="fill" objectFit="cover" />
+      <Image
+        src="/img/background.jpg"
+        className={styles.backgroundImg}
+        alt="background"
+        layout="fill"
+        objectFit="cover"
+      />
       <LoginForm />
     </div>
   )

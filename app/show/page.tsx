@@ -24,9 +24,7 @@ const MovieDetails = () => {
   // fetch movie details
   useEffect(() => {
     async function fetchDetails() {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/tv/${id}?api_key=${TMDB_API_KEY}&language=en-US`
-      )
+      const response = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${TMDB_API_KEY}&language=en-US`)
       setSelectedSeason(1)
       return await response.json()
     }

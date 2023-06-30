@@ -16,7 +16,6 @@
   width: 100px;
 }
 
-
 .episodeRow {
   height: 40px;
   cursor: pointer;
@@ -49,7 +48,7 @@
   width: 120px;
   font-weight: normal;
   font-style: italic;
-  opacity: .4;
+  opacity: 0.4;
   text-align: center;
 }
 

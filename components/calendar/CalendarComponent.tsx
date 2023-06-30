@@ -70,7 +70,10 @@ const Calendar: React.FC<Props> = ({ events }) => {
       {weeks.map((week, index) => (
         <div className={styles.week} key={index}>
           {week.map((date) => (
-            <div className={`${styles.day} ${date.getMonth() === currentMonth ? styles.currentMonth : styles.otherMonth}`} key={date.toDateString()}>
+            <div
+              className={`${styles.day} ${date.getMonth() === currentMonth ? styles.currentMonth : styles.otherMonth}`}
+              key={date.toDateString()}
+            >
               <div className={styles.date}>{date.getDate()}</div>
               <div className={styles.events}>
                 {events

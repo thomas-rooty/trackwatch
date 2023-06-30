@@ -11,7 +11,13 @@ const RegisterPage = () => {
       <Link href={'/'}>
         <ButtonMain>{'<'}</ButtonMain>
       </Link>
-      <Image src="/img/background2.jpg" className={styles.backgroundImg} alt="background" layout="fill" objectFit="cover" />
+      <Image
+        src="/img/background2.jpg"
+        className={styles.backgroundImg}
+        alt="background"
+        layout="fill"
+        objectFit="cover"
+      />
       <RegisterForm />
     </div>
   )

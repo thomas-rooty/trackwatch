@@ -15,9 +15,7 @@ const SeriesWithNewEpSoon = () => {
 
   // Get current date with 0 padding
   const today = new Date().toISOString().slice(0, 10)
-  const nextWeek = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
-    .toISOString()
-    .slice(0, 10)
+  const nextWeek = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
 
   // Call the API to get the popular movies
   useEffect(() => {
@@ -40,16 +38,11 @@ const SeriesWithNewEpSoon = () => {
     <div className={styles.container}>
       <div className={styles.sectionTitleContainer}>
         <h1 className={styles.sectionTitle}>New episode soon</h1>
-        <span
-          className={`${styles.showAll} ${showAll ? styles.active : ''}`}
-          onClick={handleShowAllClick}
-        >
+        <span className={`${styles.showAll} ${showAll ? styles.active : ''}`} onClick={handleShowAllClick}>
           {showAll ? 'Show less' : 'Show all'}
         </span>
       </div>
-      <div
-        className={`${styles.cardsContainer} ${showAll ? styles.active : ''}`}
-      >
+      <div className={`${styles.cardsContainer} ${showAll ? styles.active : ''}`}>
         {recent.map((show: any) => (
           <ShowCard key={show.id} show={show} />
         ))}

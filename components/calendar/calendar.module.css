@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-
 }
 
 .button {
@@ -19,7 +18,7 @@
 }
 
 .title {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1.5rem;
   margin: 0 1rem;
 }
@@ -54,7 +53,7 @@
 }
 
 .selected {
-  background-color: #FFC857;
+  background-color: #ffc857;
   color: #fff;
 }
 

@@ -21,9 +21,7 @@ const Account = () => {
       if (saved_shows) {
         const showDetails = await Promise.all(
           saved_shows.map(async (show) => {
-            const res = await fetch(
-              `https://api.themoviedb.org/3/tv/${show}?api_key=${TMDB_API_KEY}&language=en-US`
-            )
+            const res = await fetch(`https://api.themoviedb.org/3/tv/${show}?api_key=${TMDB_API_KEY}&language=en-US`)
             return await res.json()
           })
         )

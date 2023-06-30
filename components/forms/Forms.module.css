@@ -11,7 +11,7 @@
   height: fit-content;
   padding: 50px 80px;
   background: #fff;
-  box-shadow: 0 0 30px 0 rgba(0,0,0,0.66);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.66);
   border-radius: 3px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .label {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1rem;
   color: #545454;
   margin: 0;
@@ -48,14 +48,15 @@
   border-radius: 7px;
   background: white;
   color: grey;
-  transition: all .7s ease;
+  transition: all 0.7s ease;
 }
 
 .input:hover {
   border: 1px solid #ffce70;
 }
 
-.input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: grey;
   opacity: 1; /* Firefox */
 }
@@ -69,16 +70,16 @@
 }
 
 .submitBtn {
-  background: #FFC857;
-  font-family: "Aceh Light", sans-serif;
-  font-size: .9rem;
+  background: #ffc857;
+  font-family: 'Aceh Light', sans-serif;
+  font-size: 0.9rem;
   color: #fff;
   border: none;
   border-radius: 7px;
   padding: 14px;
   margin: 10px 0;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .submitBtn:hover {
@@ -92,7 +93,7 @@
   align-items: center;
   margin-top: 40px;
   color: #7c7c7c;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1rem;
 }
 
@@ -101,7 +102,7 @@
   color: #ffac16;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .formFooter a:hover {

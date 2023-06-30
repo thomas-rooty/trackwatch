@@ -90,5 +90,5 @@ export const checkIfShowIsSaved = async (showId: number, userId: string | undefi
 
   // Check if showId already exists in saved_shows array
   const savedShows = data.saved_shows || []
-  return !!savedShows.includes(showId);
+  return !!savedShows.includes(showId)
 }

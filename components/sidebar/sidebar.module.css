@@ -34,7 +34,7 @@
   margin-left: 10px;
   margin-bottom: 10px;
   font-weight: bold;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 18px;
   color: #f5f5f5;
 }
@@ -45,7 +45,7 @@
 
 .link {
   margin-left: 14px;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 17px;
   text-decoration: none;
 }
@@ -60,11 +60,11 @@
   align-items: center;
   color: #a8a8a8;
   cursor: pointer;
-  transition: all ease-in .2s;
+  transition: all ease-in 0.2s;
 }
 
 .active > * {
-  color: #FFC857;
+  color: #ffc857;
 }
 
 .activeSidebarListItem {
@@ -106,7 +106,7 @@
   border-radius: 20px;
   border: 1px solid #2f2f2f;
   padding: 0 30px 0 15px;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 17px;
   color: #a8a8a8;
 }
@@ -119,13 +119,13 @@
   border: 1px solid #fff;
   border-radius: 50%;
   padding-inline: 5px;
-  transition: all ease-in .2s;
+  transition: all ease-in 0.2s;
 }
 
 .cancelSearch:hover {
-  background: #FFC857;
+  background: #ffc857;
   color: black;
-  border-color: #FFC857;
+  border-color: #ffc857;
   transform: scale(1.1);
 }
 
@@ -143,6 +143,6 @@
   outline: none;
   background: none;
   color: #a8a8a8;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 17px;
 }

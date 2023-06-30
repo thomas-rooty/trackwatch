@@ -16,8 +16,8 @@
 
 .addBtnText {
   /* Add button text */
-  font-family: "Aceh Light", sans-serif;
-  font-size: .9rem;
+  font-family: 'Aceh Light', sans-serif;
+  font-size: 0.9rem;
   color: #ffffff;
   padding: 5px 7px;
 }
@@ -45,7 +45,7 @@
   border-radius: 5px;
   margin: 0;
   padding: 0;
-  transition: all ease-in .2s;
+  transition: all ease-in 0.2s;
 }
 
 .overlay {
@@ -58,13 +58,13 @@
   border-radius: 5px;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
-  background-color: #FFC857;
+  transition: 0.5s ease;
+  background-color: #ffc857;
   cursor: pointer;
 }
 
 .showCard:hover .overlay {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .showDetails {
@@ -74,7 +74,7 @@
 
 .showTitle {
   /* show title */
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -85,6 +85,6 @@
 }
 
 .showVote {
-  font-family: "Arial", sans-serif;
-  font-size: .8rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
 }

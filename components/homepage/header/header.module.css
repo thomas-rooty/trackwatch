@@ -23,12 +23,12 @@
 }
 
 .title {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 3rem;
 }
 
 .description {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1.7rem;
 }
 
@@ -42,7 +42,6 @@
 .startSection > .description {
   margin-right: 1rem;
 }
-
 
 @media (max-width: 980px) {
   .header {

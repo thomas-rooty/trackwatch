@@ -1,4 +1,4 @@
-import {create} from 'zustand'
+import { create } from 'zustand'
 
 interface DiscoverStore {
   popular: any
@@ -13,11 +13,11 @@ interface DiscoverStore {
 
 export const useDiscoverStore = create<DiscoverStore>((set) => ({
   popular: [],
-  setPopular: (movies) => set({popular: movies}),
+  setPopular: (movies) => set({ popular: movies }),
   popularSeries: [],
-  setPopularSeries: (movies) => set({popularSeries: movies}),
+  setPopularSeries: (movies) => set({ popularSeries: movies }),
   recent: [],
-  setRecent: (movies) => set({recent: movies}),
+  setRecent: (movies) => set({ recent: movies }),
   comedy: [],
-  setComedy: (movies) => set({comedy: movies}),
+  setComedy: (movies) => set({ comedy: movies }),
 }))

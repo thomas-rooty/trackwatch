@@ -34,16 +34,11 @@ const PopularSeriesOfAllTime = () => {
     <div className={styles.container}>
       <div className={styles.sectionTitleContainer}>
         <h1 className={styles.sectionTitle}>Most popular series of all time</h1>
-        <span
-          className={`${styles.showAll} ${showAll ? styles.active : ''}`}
-          onClick={handleShowAllClick}
-        >
+        <span className={`${styles.showAll} ${showAll ? styles.active : ''}`} onClick={handleShowAllClick}>
           {showAll ? 'Show less' : 'Show all'}
         </span>
       </div>
-      <div
-        className={`${styles.cardsContainer} ${showAll ? styles.active : ''}`}
-      >
+      <div className={`${styles.cardsContainer} ${showAll ? styles.active : ''}`}>
         {popularSeries.map((show: any) => (
           <ShowCard key={show.id} show={show} />
         ))}

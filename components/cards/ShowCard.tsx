@@ -51,7 +51,13 @@ const ShowCard = ({ show }: { show: Show }) => {
         </div>
       )}
       <div className={styles.showCard} onClick={handleShowClick}>
-        <Image src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} className={styles.showPoster} width={165} height={280} />
+        <Image
+          src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
+          alt={show.name}
+          className={styles.showPoster}
+          width={165}
+          height={280}
+        />
         <div className={styles.overlay} />
         <div className={styles.showDetails}>
           <h3 className={styles.showTitle}>{show.name}</h3>
@@ -62,4 +68,4 @@ const ShowCard = ({ show }: { show: Show }) => {
   )
 }
 
-export default ShowCard;
+export default ShowCard

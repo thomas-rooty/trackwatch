@@ -12,5 +12,5 @@ export const useActorStore = create<ActorStore>((set) => ({
   actor: {} as ActorDetailsProps,
   setActor: (actor) => set({ actor }),
   isLoaded: false,
-  setIsLoaded: (loaded) => set({ isLoaded: loaded })
+  setIsLoaded: (loaded) => set({ isLoaded: loaded }),
 }))

@@ -12,7 +12,7 @@
   font-size: 1.5rem;
   margin-bottom: 10px;
   text-transform: uppercase;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   color: #fff;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
   font-size: 5rem;
   color: #fff;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
 }
 
 .text {
@@ -41,7 +41,7 @@
 .number {
   position: relative;
   transform-style: preserve-3d;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 5rem;
   font-weight: bold;
   color: black;

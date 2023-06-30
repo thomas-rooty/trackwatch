@@ -11,14 +11,14 @@
 }
 
 .actorTitle {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 2.5rem;
   text-shadow: 0 0 0.5rem #000;
   color: #fff;
 }
 
 .genres {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1.2rem;
   color: #fff;
   text-shadow: 0 0 0.5rem #000;
@@ -28,7 +28,7 @@
 .voteAverage,
 .birthday {
   position: absolute;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1.2rem;
   color: #fff;
   font-weight: 700;
@@ -47,7 +47,7 @@
 /* show Description Component */
 .actorDesc {
   background-color: #eeeeee;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   color: black;
   padding: 1rem;
   border-bottom: 1px solid #cccccc;
@@ -80,7 +80,7 @@
   flex-direction: row;
   min-width: 100%;
   background-color: #ffffff;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   color: #333333;
   padding: 1rem;
 }
@@ -93,7 +93,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   display: flex;
   align-items: center;
 }
@@ -152,7 +152,7 @@
 }
 
 .title {
-  font-family: "Aceh Light", sans-serif;
+  font-family: 'Aceh Light', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   color: #333333;

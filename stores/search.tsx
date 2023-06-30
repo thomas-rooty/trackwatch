@@ -15,5 +15,5 @@ export const useSearchStore = create<SearchStore>((set) => ({
   searchResults: [],
   setSearchResults: (results) => {
     set({ searchResults: results })
-  }
+  },
 }))

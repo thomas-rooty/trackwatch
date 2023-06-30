@@ -14,11 +14,7 @@ const PopularSeriesRecent = () => {
   const [showAll, setShowAll] = useState(false)
 
   // Get first date of last year and last day of this year
-  const twoYearAgo = new Date(
-    new Date().setFullYear(new Date().getFullYear() - 2)
-  )
-    .toISOString()
-    .slice(0, 10)
+  const twoYearAgo = new Date(new Date().setFullYear(new Date().getFullYear() - 2)).toISOString().slice(0, 10)
 
   // Call the API to get the popular movies
   useEffect(() => {
@@ -41,16 +37,11 @@ const PopularSeriesRecent = () => {
     <div className={styles.container}>
       <div className={styles.sectionTitleContainer}>
         <h1 className={styles.sectionTitle}>Recent popular series</h1>
-        <span
-          className={`${styles.showAll} ${showAll ? styles.active : ''}`}
-          onClick={handleShowAllClick}
-        >
+        <span className={`${styles.showAll} ${showAll ? styles.active : ''}`} onClick={handleShowAllClick}>
           {showAll ? 'Show less' : 'Show all'}
         </span>
       </div>
-      <div
-        className={`${styles.cardsContainer} ${showAll ? styles.active : ''}`}
-      >
+      <div className={`${styles.cardsContainer} ${showAll ? styles.active : ''}`}>
         {popular.map((show: any) => (
           <ShowCard key={show.id} show={show} />
         ))}

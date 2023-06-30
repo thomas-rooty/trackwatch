@@ -42,14 +42,11 @@ const UserProfile = () => {
         <div className={styles.container}>
           <div className={styles.header}>
             <h1 className={styles.title}>
-              Welcome {user?.name}, you've watched a total of{' '}
-              <b>{showsWatched}</b> shows, which represents a total of{' '}
-              <b>{seasonsWatched}</b> seasons and <b>{episodesWatched}</b>{' '}
-              episodes!
+              Welcome {user?.name}, you've watched a total of <b>{showsWatched}</b> shows, which represents a total of{' '}
+              <b>{seasonsWatched}</b> seasons and <b>{episodesWatched}</b> episodes!
             </h1>
             <h3 className={styles.subtitle}>
-              Approximatively, you've accumulated a total of{' '}
-              <b>{minutesWatched}</b> minutes screen time! Whether you're
+              Approximatively, you've accumulated a total of <b>{minutesWatched}</b> minutes screen time! Whether you're
               horrified or proud, we don't judge!
             </h3>
           </div>

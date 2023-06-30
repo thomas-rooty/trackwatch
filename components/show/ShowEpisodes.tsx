@@ -17,7 +17,13 @@ const ShowEpisodes = () => {
           <span className={styles.episodeText}>Episodes</span>
         </h3>
         <div className={styles.sectionPoster}>
-          <Image src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} alt={show.name} className={styles.posterImg} width={330} height={500} />
+          <Image
+            src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}
+            alt={show.name}
+            className={styles.posterImg}
+            width={330}
+            height={500}
+          />
         </div>
       </div>
       <div className={styles.right}>

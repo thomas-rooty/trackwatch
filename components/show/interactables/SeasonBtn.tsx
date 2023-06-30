@@ -1,20 +1,19 @@
-import styles from './seasonbtn.module.css';
-import {useShowStore} from '@/stores/show';
+import styles from './seasonbtn.module.css'
+import { useShowStore } from '@/stores/show'
 
 // Button dropdown with the seasons
 const SeasonBtn = () => {
-
   // Get show from store
-  const show = useShowStore(state => state.show);
-  const seasons = show.seasons;
+  const show = useShowStore((state) => state.show)
+  const seasons = show.seasons
 
   // Get and set season from store
-  const season = useShowStore((state) => state.selectedSeason);
-  const setSeason = useShowStore((state) => state.setSelectedSeason);
+  const season = useShowStore((state) => state.selectedSeason)
+  const setSeason = useShowStore((state) => state.setSelectedSeason)
 
   const handleSeason = (e: any) => {
-    setSeason(e.target.value);
-  };
+    setSeason(e.target.value)
+  }
 
   return (
     <select className={styles.seasonBtn} onChange={handleSeason} value={season}>
@@ -24,7 +23,7 @@ const SeasonBtn = () => {
         </option>
       ))}
     </select>
-  );
-};
+  )
+}
 
-export default SeasonBtn;
+export default SeasonBtn
