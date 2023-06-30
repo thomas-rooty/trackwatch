@@ -8,6 +8,26 @@
   background-color: #111;
   overflow-x: hidden;
   padding: 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.sidebarArrowContainer {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+
+.sidebarArrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .sidebarLogoContainer {
@@ -145,4 +165,18 @@
   color: #a8a8a8;
   font-family: 'Aceh Light', sans-serif;
   font-size: 17px;
+}
+
+.sidebarOpen {
+  left: 0!important;
+}
+
+@media only screen and (max-width: 900px) {
+  .sidebar {
+    left: -180px;
+  }
+
+  .sidebarArrowContainer {
+    display: flex;
+  }
 }

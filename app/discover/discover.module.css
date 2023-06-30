@@ -1,3 +1,9 @@
 .container {
   margin-left: 200px; /* Same as the width of the sidebar */
 }
+
+@media only screen and (max-width: 900px) {
+  .container {
+    margin-left: 30px;
+  }
+}

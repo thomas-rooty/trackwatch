@@ -22,10 +22,13 @@ import HelpActive from '@/public/icons/help_active.png'
 import Feedback from '@/public/icons/feedback.png'
 import FeedbackActive from '@/public/icons/feedback_active.png'
 import SignOut from '@/public/icons/signout.png'
+import { useState } from 'react'
 
 const Sidebar = () => {
   // Used to determine which sidebar item is active and render the correct icon & class
   const pathname = usePathname()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
   const isActive = (route: string) => {
     return pathname === route
   }
@@ -37,162 +40,167 @@ const Sidebar = () => {
   const _signOut = useUserStore((state) => state.signOut)
 
   return (
-    <div className={styles.sidebar}>
-      <div className={styles.sidebarLogoContainer}>
-        <Link href="/discover">
-          <Image src={BrandInline} className={styles.sidebarLogo} alt="logo" />
-        </Link>
+    <>
+      <div className={styles.sidebarArrowContainer} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+        <img src={'icons/arrow_right.png'} className={styles.sidebarArrow} alt="arrow" />
       </div>
-      <hr className={styles.hr} />
-      <div className={styles.sidebarItemContainer}>
-        <div className={styles.sidebarItemSection}>
-          <ul className={styles.sidebarList}>
-            <SearchBar />
-            <Link href="/account">
-              <li
-                className={`${styles.sidebarListItem} ${isActive('/account') ? styles.active : ''} ${
-                  isActive('/account') ? styles.activeSidebarListItem : ''
-                }`}
-              >
-                <Image
-                  src={getIcon(Profile, ProfileActive, isActive('/account'))}
-                  className={styles.svgIcon}
-                  width={24}
-                  height={24}
-                  alt="list icon"
-                />
-                <span className={styles.link}>Profile</span>
-              </li>
-            </Link>
-            <Link href="/calendar">
-              <li
-                className={`${styles.sidebarListItem} ${isActive('/calendar') ? styles.active : ''} ${
-                  isActive('/calendar') ? styles.activeSidebarListItem : ''
-                }`}
-              >
-                <Image
-                  src={getIcon(Calendar, CalendarActive, isActive('/calendar'))}
-                  className={styles.svgIcon}
-                  width={24}
-                  height={24}
-                  alt="list icon"
-                />
-                <span className={styles.link}>Calendar</span>
-              </li>
-            </Link>
-            <Link href="/upcoming">
-              <li
-                className={`${styles.sidebarListItem} ${isActive('/upcoming') ? styles.active : ''} ${
-                  isActive('/upcoming') ? styles.activeSidebarListItem : ''
-                }`}
-              >
-                <Image
-                  src={getIcon(Upcoming, UpcomingActive, isActive('/upcoming'))}
-                  className={styles.svgIcon}
-                  width={24}
-                  height={24}
-                  alt="list icon"
-                />
-                <span className={styles.link}>Upcoming</span>
-              </li>
-            </Link>
-            <Link href="/watchlist">
-              <li
-                className={`${styles.sidebarListItem} ${isActive('/watchlist') ? styles.active : ''} ${
-                  isActive('/watchlist') ? styles.activeSidebarListItem : ''
-                }`}
-              >
-                <Image
-                  src={getIcon(List, ListActive, isActive('/watchlist'))}
-                  className={styles.svgIcon}
-                  width={24}
-                  height={24}
-                  alt="list icon"
-                />
-                <span className={styles.link}>Watchlist</span>
-              </li>
-            </Link>
-            <Link href="/discover">
-              <li
-                className={`${styles.sidebarListItem} ${isActive('/discover') ? styles.active : ''} ${
-                  isActive('/discover') ? styles.activeSidebarListItem : ''
-                }`}
-              >
-                <Image
-                  src={getIcon(Search, SearchActive, isActive('/discover'))}
-                  className={styles.svgIcon}
-                  width={24}
-                  height={24}
-                  alt="list icon"
-                />
-                <span className={styles.link}>Discover</span>
-              </li>
-            </Link>
-          </ul>
+      <div id='sidebar' className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ''}`}>
+        <div className={styles.sidebarLogoContainer}>
+          <Link href="/discover">
+            <Image src={BrandInline} className={styles.sidebarLogo} alt="logo" />
+          </Link>
         </div>
-        <div className={styles.sidebarItemSection}>
-          <p className={styles.sidebarItemSectionTitle}>Support</p>
-          <ul className={styles.sidebarList}>
-            <li
-              className={`${styles.sidebarListItem} ${isActive('/settings') ? styles.active : ''} ${
-                isActive('/settings') ? styles.activeSidebarListItem : ''
-              }`}
-            >
-              <Image
-                src={getIcon(Settings, SettingsActive, isActive('/settings'))}
-                className={styles.svgIcon}
-                width={24}
-                height={24}
-                alt="list icon"
-              />
-              <Link href="/settings">
-                <span className={styles.link}>Settings</span>
+        <hr className={styles.hr} />
+        <div className={styles.sidebarItemContainer}>
+          <div className={styles.sidebarItemSection}>
+            <ul className={styles.sidebarList}>
+              <SearchBar />
+              <Link href="/account">
+                <li
+                  className={`${styles.sidebarListItem} ${isActive('/account') ? styles.active : ''} ${
+                    isActive('/account') ? styles.activeSidebarListItem : ''
+                  }`}
+                >
+                  <Image
+                    src={getIcon(Profile, ProfileActive, isActive('/account'))}
+                    className={styles.svgIcon}
+                    width={24}
+                    height={24}
+                    alt="list icon"
+                  />
+                  <span className={styles.link}>Profile</span>
+                </li>
               </Link>
-            </li>
-            <li
-              className={`${styles.sidebarListItem} ${isActive('/help') ? styles.active : ''} ${
-                isActive('/help') ? styles.activeSidebarListItem : ''
-              }`}
-            >
-              <Image
-                src={getIcon(Help, HelpActive, isActive('/help'))}
-                className={styles.svgIcon}
-                width={24}
-                height={24}
-                alt="list icon"
-              />
-              <Link href="/help">
-                <span className={styles.link}>Get help</span>
+              <Link href="/calendar">
+                <li
+                  className={`${styles.sidebarListItem} ${isActive('/calendar') ? styles.active : ''} ${
+                    isActive('/calendar') ? styles.activeSidebarListItem : ''
+                  }`}
+                >
+                  <Image
+                    src={getIcon(Calendar, CalendarActive, isActive('/calendar'))}
+                    className={styles.svgIcon}
+                    width={24}
+                    height={24}
+                    alt="list icon"
+                  />
+                  <span className={styles.link}>Calendar</span>
+                </li>
               </Link>
-            </li>
-            <li
-              className={`${styles.sidebarListItem} ${isActive('/feedback') ? styles.active : ''} ${
-                isActive('/feedback') ? styles.activeSidebarListItem : ''
-              }`}
-            >
-              <Image
-                src={getIcon(Feedback, FeedbackActive, isActive('/feedback'))}
-                className={styles.svgIcon}
-                width={24}
-                height={24}
-                alt="list icon"
-              />
-              <Link href="/feedback">
-                <span className={styles.link}>Send love!</span>
+              <Link href="/upcoming">
+                <li
+                  className={`${styles.sidebarListItem} ${isActive('/upcoming') ? styles.active : ''} ${
+                    isActive('/upcoming') ? styles.activeSidebarListItem : ''
+                  }`}
+                >
+                  <Image
+                    src={getIcon(Upcoming, UpcomingActive, isActive('/upcoming'))}
+                    className={styles.svgIcon}
+                    width={24}
+                    height={24}
+                    alt="list icon"
+                  />
+                  <span className={styles.link}>Upcoming</span>
+                </li>
               </Link>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.sidebarItemSignout}>
-          <ul className={styles.sidebarList}>
-            <li className={styles.sidebarListItem} onClick={_signOut}>
-              <Image src={SignOut} className={styles.svgIcon} width={18} height={18} alt="list icon" />
-              <span className={styles.link}>Sign out</span>
-            </li>
-          </ul>
+              <Link href="/watchlist">
+                <li
+                  className={`${styles.sidebarListItem} ${isActive('/watchlist') ? styles.active : ''} ${
+                    isActive('/watchlist') ? styles.activeSidebarListItem : ''
+                  }`}
+                >
+                  <Image
+                    src={getIcon(List, ListActive, isActive('/watchlist'))}
+                    className={styles.svgIcon}
+                    width={24}
+                    height={24}
+                    alt="list icon"
+                  />
+                  <span className={styles.link}>Watchlist</span>
+                </li>
+              </Link>
+              <Link href="/discover">
+                <li
+                  className={`${styles.sidebarListItem} ${isActive('/discover') ? styles.active : ''} ${
+                    isActive('/discover') ? styles.activeSidebarListItem : ''
+                  }`}
+                >
+                  <Image
+                    src={getIcon(Search, SearchActive, isActive('/discover'))}
+                    className={styles.svgIcon}
+                    width={24}
+                    height={24}
+                    alt="list icon"
+                  />
+                  <span className={styles.link}>Discover</span>
+                </li>
+              </Link>
+            </ul>
+          </div>
+          <div className={styles.sidebarItemSection}>
+            <p className={styles.sidebarItemSectionTitle}>Support</p>
+            <ul className={styles.sidebarList}>
+              <li
+                className={`${styles.sidebarListItem} ${isActive('/settings') ? styles.active : ''} ${
+                  isActive('/settings') ? styles.activeSidebarListItem : ''
+                }`}
+              >
+                <Image
+                  src={getIcon(Settings, SettingsActive, isActive('/settings'))}
+                  className={styles.svgIcon}
+                  width={24}
+                  height={24}
+                  alt="list icon"
+                />
+                <Link href="/settings">
+                  <span className={styles.link}>Settings</span>
+                </Link>
+              </li>
+              <li
+                className={`${styles.sidebarListItem} ${isActive('/help') ? styles.active : ''} ${
+                  isActive('/help') ? styles.activeSidebarListItem : ''
+                }`}
+              >
+                <Image
+                  src={getIcon(Help, HelpActive, isActive('/help'))}
+                  className={styles.svgIcon}
+                  width={24}
+                  height={24}
+                  alt="list icon"
+                />
+                <Link href="/help">
+                  <span className={styles.link}>Get help</span>
+                </Link>
+              </li>
+              <li
+                className={`${styles.sidebarListItem} ${isActive('/feedback') ? styles.active : ''} ${
+                  isActive('/feedback') ? styles.activeSidebarListItem : ''
+                }`}
+              >
+                <Image
+                  src={getIcon(Feedback, FeedbackActive, isActive('/feedback'))}
+                  className={styles.svgIcon}
+                  width={24}
+                  height={24}
+                  alt="list icon"
+                />
+                <Link href="/feedback">
+                  <span className={styles.link}>Send love!</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.sidebarItemSignout}>
+            <ul className={styles.sidebarList}>
+              <li className={styles.sidebarListItem} onClick={_signOut}>
+                <Image src={SignOut} className={styles.svgIcon} width={18} height={18} alt="list icon" />
+                <span className={styles.link}>Sign out</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
