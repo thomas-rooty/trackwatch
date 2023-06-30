@@ -44,6 +44,10 @@
   border: 1px solid #2a2a2a;
 }
 
+.currentDay {
+  background-color: #eec67e !important;
+}
+
 .currentMonth {
   background-color: #141414;
 }
@@ -83,6 +87,7 @@
   text-overflow: ellipsis;
   max-width: 140px;
   width: fit-content;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 

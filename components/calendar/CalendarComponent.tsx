@@ -51,6 +51,10 @@ const Calendar: React.FC<Props> = ({ events }) => {
     setCurrentYear(currentMonth === 11 ? currentYear + 1 : currentYear)
   }
 
+  const redirectToShow = (show: number) => {
+    window.location.href = `/show?id=${show}`
+  }
+
   return (
     <div className={styles.calendar}>
       <div className={styles.header}>
@@ -71,7 +75,11 @@ const Calendar: React.FC<Props> = ({ events }) => {
         <div className={styles.week} key={index}>
           {week.map((date) => (
             <div
-              className={`${styles.day} ${date.getMonth() === currentMonth ? styles.currentMonth : styles.otherMonth}`}
+              className={`${styles.day} ${date.getMonth() === currentMonth ? styles.currentMonth : styles.otherMonth} ${
+                date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth()
+                  ? styles.currentDay
+                  : ''
+              }`}
               key={date.toDateString()}
             >
               <div className={styles.date}>{date.getDate()}</div>
@@ -79,7 +87,7 @@ const Calendar: React.FC<Props> = ({ events }) => {
                 {events
                   .filter((event) => event.date.toDateString() === date.toDateString())
                   .map((event) => (
-                    <div key={event.id} className={styles.event}>
+                    <div key={event.id} className={styles.event} onClick={() => redirectToShow(event.id)}>
                       {event.title}
                     </div>
                   ))}

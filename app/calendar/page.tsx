@@ -40,10 +40,11 @@ const Calendar = () => {
   useEffect(() => {
     // Build events array
     const events = savedShowsDetails.map((show) => {
-      const { name, next_episode_to_air } = show
+      const { id, name, next_episode_to_air } = show
       const { air_date } = next_episode_to_air
       const date = new Date(air_date)
       return {
+        id,
         title: name,
         date,
       }
@@ -56,7 +57,7 @@ const Calendar = () => {
     <div className={styles.container}>
       <Sidebar />
       <div className={styles.sectionTitleContainer}>
-        <h1 className={styles.sectionTitle}>Calendar of events</h1>
+        <h1 className={styles.sectionTitle}>Calendar of shows</h1>
       </div>
       {loaded && <CalendarComponent events={events} />}
     </div>
