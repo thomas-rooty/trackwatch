@@ -49,3 +49,13 @@
   list-style: none;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 900px) {
+  .cardsContainer {
+    grid-template-columns: repeat(auto-fill, 90px);
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+}

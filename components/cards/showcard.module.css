@@ -88,3 +88,23 @@
   font-family: 'Arial', sans-serif;
   font-size: 0.8rem;
 }
+
+@media only screen and (max-width: 900px) {
+  .container {
+    margin-bottom: 1rem;
+  }
+
+  .showCard {
+    width: 90px;
+    height: 170px;
+  }
+
+  .overlay {
+    height: 145px;
+  }
+
+  .showTitle {
+    width: 90px;
+    font-size: 0.9rem;
+  }
+}
