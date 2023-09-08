@@ -3,6 +3,7 @@ import styles from './calendar.module.css'
 import ArrowLeft from '@/public/icons/arrow_left.png'
 import ArrowRight from '@/public/icons/arrow_right.png'
 import Image from 'next/legacy/image'
+import Link from 'next/link'
 
 type Event = {
   id: number
@@ -87,9 +88,11 @@ const Calendar: React.FC<Props> = ({ events }) => {
                 {events
                   .filter((event) => event.date.toDateString() === date.toDateString())
                   .map((event) => (
-                    <div key={event.id} className={styles.event} onClick={() => redirectToShow(event.id)}>
-                      {event.title}
-                    </div>
+                    <Link href={`/show?id=${event.id}`} key={event.id}>
+                      <div key={event.id} className={styles.event}>
+                        {event.title}
+                      </div>
+                    </Link>
                   ))}
               </div>
             </div>
